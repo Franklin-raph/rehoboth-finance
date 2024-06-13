@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom'
 import Dashboard from './pages/dashboard/Dashboard'
 import CreateAccount from './pages/create-account/CreateAccount'
 import Wallet from './pages/wallet/Wallet'
@@ -26,7 +26,7 @@ import SaveAsset from './pages/save-asset/SaveAsset'
 function App() {
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<CreateAccount />} />
         <Route path="/dashboard" element={<Dashboard />} />
@@ -49,7 +49,7 @@ function App() {
         <Route path="/withdraw-via-link" element={<WithdrawViaLink />} />
         <Route path="/save-asset/:asset" element={<SaveAsset />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 

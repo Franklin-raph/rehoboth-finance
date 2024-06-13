@@ -44,7 +44,7 @@ const SideNav = () => {
 
         <div className=" my-10 text-white">
           <p className="text-[12px] text-[#98A2B3] mb-2 px-3">FINANCE</p>
-          <Link to='#' className={ location.pathname.includes('wallet')  ? `flex items-center justify-between py-[10px] text-[#072AC8] bg-[#072AC81F] px-5` :`px-5 flex items-center justify-between py-[10px] text-[#101828]`}>
+          <Link to='/wallet' className={ location.pathname.includes('wallet')  ? `flex items-center justify-between py-[10px] text-[#072AC8] bg-[#072AC81F] px-5` :`px-5 flex items-center justify-between py-[10px] text-[#101828]`}>
             <div className="flex items-center">
                 <IoWalletOutline />
                 <p className="ml-[10px]">Wallet</p>
@@ -62,7 +62,7 @@ const SideNav = () => {
                 <p className="ml-[10px]">Withdraw</p>
             </div>
           </Link>
-          <Link to='/transactions' className={ location.pathname.includes('/history') ? `flex items-center justify-between py-[10px] text-[#072AC8] px-5 bg-[#072AC81F]` :`px-5 flex items-center justify-between py-[10px] text-[#101828]`}>
+          <Link to='/history' className={ location.pathname.includes('/history') ? `flex items-center justify-between py-[10px] text-[#072AC8] px-5 bg-[#072AC81F]` :`px-5 flex items-center justify-between py-[10px] text-[#101828]`}>
             <div className="flex items-center">
                 <PiNotepad />
                 <p className="ml-[10px]">History</p>
@@ -72,7 +72,7 @@ const SideNav = () => {
 
         <div className=" my-10 text-white">
           <p className="text-[12px] text-[#98A2B3] mb-2 px-3">EARN</p>
-          <Link to='/savings' className={ location.pathname.includes('/savings') ? `flex items-center justify-between py-[10px] text-[#072AC8] bg-[#072AC81F] px-5` :`px-5 flex items-center justify-between py-[10px] text-[#101828]`}>
+          <Link to='/savings' className={ location.pathname.includes('/savings') || location.pathname.includes('/save-asset') ? `flex items-center justify-between py-[10px] text-[#072AC8] bg-[#072AC81F] px-5` :`px-5 flex items-center justify-between py-[10px] text-[#101828]`}>
             <div className="flex items-center">
               <MdOutlineSavings />
               <p className="ml-[10px]">Savings</p>
