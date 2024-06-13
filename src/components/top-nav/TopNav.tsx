@@ -18,7 +18,9 @@ const TopNav = () => {
       <div className='flex items-center gap-5'>
         <div className='flex items-center gap-2'>
           <img src="./images/overview.svg" alt="" />
-          {/* <p className='text-[#737985] capitalize'>{pathname.replace(/^\//, '')}</p> */}
+          <p>
+            <p className='text-[#737985] capitalize'>{location.pathname.replace(/^\//, '')}</p>
+          </p>
         </div>
         <div className='flex items-center gap-2 bg-[#F8F8F8] border border-[#BDBDBD] rounded-[4px] px-[12px] py-[7px] w-[400px]'>
           <CiSearch className='text-[#828282] text-[26px] cursor-pointer'/>
