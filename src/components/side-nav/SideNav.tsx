@@ -62,7 +62,7 @@ const SideNav = () => {
                 <p className="ml-[10px]">Withdraw</p>
             </div>
           </Link>
-          <Link to='/history' className={ location.pathname.includes('/history') ? `flex items-center justify-between py-[10px] text-[#072AC8] px-5 bg-[#072AC81F]` :`px-5 flex items-center justify-between py-[10px] text-[#101828]`}>
+          <Link to='/history' className={ location.pathname.includes('/history') || location.pathname.includes('/transaction-info') ? `flex items-center justify-between py-[10px] text-[#072AC8] px-5 bg-[#072AC81F]` :`px-5 flex items-center justify-between py-[10px] text-[#101828]`}>
             <div className="flex items-center">
                 <PiNotepad />
                 <p className="ml-[10px]">History</p>
