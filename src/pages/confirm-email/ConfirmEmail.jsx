@@ -5,37 +5,30 @@ import { FaDiscord } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa6";
 import { BsLightningCharge } from "react-icons/bs";
 import OTPInput from 'react-otp-input'
+import AuthNav from '../../components/auth-nav/AuthNav';
+import Alert from '../../components/alert/Alert';
 
 const ConfirmEmail = () => {
 
     const [otp, setOtp] = useState('')
+    const [msg, setMsg] = useState('')
+    const [alertType, setAlertType] = useState('')
 
-    async function handleSignIn(){
-        navigate('/get-started')
+    const navigate = useNavigate()
+
+    async function handleConfirmEmail(){
+        if(!otp){
+            setMsg('Please input the OTP sent to you.')
+            setAlertType('error')
+            return
+        }else{
+            navigate('/about-self')
+        }
     }
 
   return (
     <div className="relative">
-        <nav className="flex items-center justify-between py-5 relative z-[11] bg-white px-[100px]">
-            <div className="flex items-center gap-10">
-            <Link  to='/' className='block'>
-                <img src="./images/rehoboth-logo.svg" alt="" />
-            </Link>
-            <ul className="flex items-center gap-10">
-                <li className="text-[#667085] flex items-center gap-2">
-                <p>Blog</p>
-                <FaChevronDown />
-                </li>
-                <li className="text-[#667085]">
-                <Link href='#'>Faq</Link>
-                </li>
-            </ul>
-            </div>
-            <button className="flex items-center gap-2 bg-primary-color text-white px-4 py-[10px] rounded-[8px]">
-            <BsLightningCharge />
-            <p>Leaderboard</p>
-            </button>
-        </nav>
+        <AuthNav />
 
         <div className=" mt-[10rem]">
             <div className=" z-[10] w-[70%] mx-auto h-[80%] absolute left-[50%] top-[-5%] blury-bg"  style={{ transform: "translate(-50%, 0%)" }}></div>
@@ -46,7 +39,7 @@ const ConfirmEmail = () => {
                 </div>
                 <div className="text-center mb-12 mt-[-80px] relative z-[100]">
                 <h2 className="text-2xl font-semibold">Confirm email address </h2>
-                <p className="text-[#667085] text-[14px]">Please input the OTP sent to olivia@rehoboth.com</p>
+                <p className="text-[#667085] text-[14px] mt-3">Please input the OTP sent to {localStorage.getItem('createAccountEmail')}</p>
                 </div>
                 <div className="flex flex-col w-[400px] mx-auto">
 
@@ -62,7 +55,7 @@ const ConfirmEmail = () => {
                 </div>
                 <p className='text-[#667085] text-[12px] mt-2 mb-[5rem] text-center'>Please check your email inbox for an OTP code</p>
 
-                <button onClick={handleSignIn} className="bg-primary-color text-white w-[90%] mx-auto py-2 px-4 rounded-[8px] mt-5">
+                <button onClick={handleConfirmEmail} className="bg-primary-color text-white w-[90%] mx-auto py-2 px-4 rounded-[8px] mt-5">
                     Confirm
                 </button>
                 <div className="text-center text-[#808080] mt-[70px] text-[14px]">
@@ -81,6 +74,9 @@ const ConfirmEmail = () => {
             <Link href="#" className="mr-4">Terms of Use</Link>
             </div>
         </div>
+        {
+            msg && <Alert msg={msg} setMsg={setMsg} alertType={alertType}/>
+        }
     </div>
   )
 }

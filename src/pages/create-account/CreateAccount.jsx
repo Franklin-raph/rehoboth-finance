@@ -1,40 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { FaGoogle } from "react-icons/fa";
 import { FaDiscord } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa6";
-import { BsLightningCharge } from "react-icons/bs";
+import { GoEye, GoEyeClosed } from "react-icons/go";
+
+import AuthNav from '../../components/auth-nav/AuthNav';
+import Alert from '../../components/alert/Alert';
 
 const CreateAccount = () => {
 
     const navigate = useNavigate()
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState('')
+    const [passwordType, setPasswordType] = useState('password')
+    const [msg, setMsg] = useState('')
+    const [alertType, setAlertType] = useState('')
 
-    async function handleSignIn(){
-        navigate('/get-started')
+    async function handleAccountCreation(){
+      if(!email || !password || !confirmPassword){
+        setMsg('Please fill in all fields')
+        setAlertType('error')
+        return
+      }else if(password !== confirmPassword){
+        setMsg('Passwords do not match')
+        setAlertType('error')
+        return
+      }else{
+        localStorage.setItem('createAccountEmail', email)
+        navigate('/confirm-email')
+      }
     }
 
   return (
     <div className="relative">
-      <nav className="flex items-center justify-between py-5 relative z-[11] bg-white px-[100px]">
-        <div className="flex items-center gap-10">
-          <Link  to='/' className='block'>
-            <img src="./images/rehoboth-logo.svg" alt="" />
-          </Link>
-          <ul className="flex items-center gap-10">
-            <li className="text-[#667085] flex items-center gap-2">
-              <p>Blog</p>
-              <FaChevronDown />
-            </li>
-            <li className="text-[#667085]">
-              <Link href='#'>Faq</Link>
-            </li>
-          </ul>
-        </div>
-        <button className="flex items-center gap-2 bg-primary-color text-white px-4 py-[10px] rounded-[8px]">
-          <BsLightningCharge />
-          <p>Leaderboard</p>
-        </button>
-      </nav>
+      <AuthNav />
 
       <div className=" mt-[10rem]">
         <div className=" z-[10] w-[70%] mx-auto h-[80%] absolute left-[50%] top-[-5%] blury-bg"  style={{ transform: "translate(-50%, 0%)" }}></div>
@@ -70,28 +71,53 @@ const CreateAccount = () => {
                 <label htmlFor="email" className="text-[#121212] gont-[500] text-[14px] mb-1 block">Email</label>
                 <input
                   type="email"
+                  onChange={e => setEmail(e.target.value)}
                   placeholder="olivia@rehoboth.com"
-                  className="border border-gray-300 text-[#707070] p-2 rounded-[8px] w-full"
-                />
-              </div>
-              <div className="my-5">
-                <label htmlFor="password" className="text-[#121212] gont-[500] text-[14px] mb-1 block">Password</label>
-                <input
-                  type="password"
-                  placeholder="********"
-                  className="border border-gray-300 p-2 rounded-[8px] w-full"
-                />
-              </div>
-              <div>
-                <label htmlFor="password" className="text-[#121212] gont-[500] text-[14px] mb-1 block">Confirm Password</label>
-                <input
-                  type="password"
-                  placeholder="********"
-                  className="border border-gray-300 p-2 rounded-[8px] w-full"
+                  className="border border-gray-300 text-[#707070] p-2 rounded-[8px] outline-none w-full"
                 />
               </div>
 
-              <button onClick={handleSignIn} className="bg-primary-color text-white py-2 px-4 rounded-[8px] mt-5">
+              <div className='my-5'>
+                <label className="text-[#121212] gont-[500] text-[14px] mb-1 block">Password</label>
+                <div className='flex items-center justify-between border border-gray-300 p-2 rounded-[6px] w-full'>
+                <input
+                    type={passwordType}
+                    onChange={e => setPassword(e.target.value)}
+                    placeholder="********"
+                    className="outline-none"
+                  />
+                  <div>
+                    {
+                      passwordType === 'password' ?
+                      <GoEye className='cursor-pointer text-gray-300 text-[22px]' onClick={() => setPasswordType('text')}/>
+                      :
+                      <GoEyeClosed className='cursor-pointer text-gray-300' onClick={() => setPasswordType('password')}/>
+                    }
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label className="text-[#121212] gont-[500] text-[14px] mb-1 block">Confirm Password</label>
+                <div className='flex items-center justify-between border border-gray-300 p-2 rounded-[6px] w-full'>
+                <input
+                    type={passwordType}
+                    onChange={e => setConfirmPassword(e.target.value)}
+                    placeholder="********"
+                    className="outline-none"
+                  />
+                  <div>
+                    {
+                      passwordType === 'password' ?
+                      <GoEye className='cursor-pointer text-gray-300 text-[22px]' onClick={() => setPasswordType('text')}/>
+                      :
+                      <GoEyeClosed className='cursor-pointer text-gray-300' onClick={() => setPasswordType('password')}/>
+                    }
+                  </div>
+                </div>
+              </div>
+
+              <button onClick={handleAccountCreation} className="bg-primary-color text-white py-2 px-4 rounded-[8px] mt-5">
                 Create Account
               </button>
               <div className="text-center text-[#808080] mt-[70px] text-[14px]">
@@ -110,6 +136,9 @@ const CreateAccount = () => {
           <Link href="#" className="mr-4">Terms of Use</Link>
         </div>
       </div>
+      {
+        msg && <Alert msg={msg} setMsg={setMsg} alertType={alertType}/>
+      }
     </div>
   )
 }

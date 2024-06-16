@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import { FiLoader } from "react-icons/fi";
 import { FaChevronDown } from "react-icons/fa6";
 import { BsLightningCharge } from "react-icons/bs";
+import AuthNav from '../../components/auth-nav/AuthNav';
+import Alert from '../../components/alert/Alert';
 
 const AboutSelf = () => {
 
@@ -10,8 +12,15 @@ const AboutSelf = () => {
     const [showCountries, setShowCountries] = useState(false)
     const [allCountries, setAllCountries] = useState([])
     const [loader, setLoader] = useState(false)
-    const [country, setCountry] = useState('')
     const [searchText, setSeacrhText] = useState('')
+    
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [userName, setUserName] = useState('')
+    const [country, setCountry] = useState('')
+
+    const [msg, setMsg] = useState('')
+    const [alertType, setAlertType] = useState('')
 
     async function getAllCountruies(){
         setLoader(true)
@@ -31,33 +40,19 @@ const AboutSelf = () => {
         getAllCountruies()
     },[])
 
-    async function handleSignIn(){
-        navigate('/get-started')
+    async function handleAboutSelfCreation(){
+        if(!firstName || !lastName || !userName || !country){
+            setMsg('Please fill in all fields')
+            setAlertType('error')
+            return
+        }else{
+            navigate('/login')
+        }
     }
 
   return (
     <div className="relative">
-        <nav className="flex items-center justify-between py-5 relative z-[11] bg-white px-[100px]">
-            <div className="flex items-center gap-10">
-            <Link  to='/' className='block'>
-                <img src="./images/rehoboth-logo.svg" alt="" />
-            </Link>
-            <ul className="flex items-center gap-10">
-                <li className="text-[#667085] flex items-center gap-2">
-                    <p>Blog</p>
-                    <FaChevronDown />
-                </li>
-                <li className="text-[#667085]">
-                    <Link href='#'>Faq</Link>
-                </li>
-            </ul>
-            </div>
-            <button className="flex items-center gap-2 bg-primary-color text-white px-4 py-[10px] rounded-[8px]">
-            <BsLightningCharge />
-            <p>Leaderboard</p>
-            </button>
-        </nav>
-
+        <AuthNav />
         <div className=" mt-[10rem]">
             <div className=" z-[10] w-[70%] mx-auto h-[80%] absolute left-[50%] top-[-5%] blury-bg"  style={{ transform: "translate(-50%, 0%)" }}></div>
             <div className=" flex flex-col justify-center items-center relative z-[11]">
@@ -75,6 +70,7 @@ const AboutSelf = () => {
                     <label className="text-[#121212] gont-[500] text-[14px] mb-1 block">First Name</label>
                     <input
                         type="text"
+                        onChange={e => setFirstName(e.target.value)}
                         placeholder="Adeyemi"
                         className="border border-gray-300 text-[#707070] p-2 rounded-[6px] outline-none w-full"
                     />
@@ -83,6 +79,7 @@ const AboutSelf = () => {
                     <label className="text-[#121212] gont-[500] text-[14px] mb-1 block">Last Name</label>
                     <input
                         type="text"
+                        onChange={e => setLastName(e.target.value)}
                         placeholder="Issac"
                         className="border border-gray-300 p-2 rounded-[6px] outline-none w-full"
                     />
@@ -91,6 +88,7 @@ const AboutSelf = () => {
                     <label className="text-[#121212] gont-[500] text-[14px] mb-1 block">Username</label>
                     <input
                         type="text"
+                        onChange={e => setUserName(e.target.value)}
                         placeholder="Your nickname"
                         className="border border-gray-300 p-2 rounded-[6px] w-full outline-none"
                     />
@@ -101,6 +99,7 @@ const AboutSelf = () => {
                     <div className='flex items-center justify-between border border-gray-300 p-2 rounded-[6px] w-full'>
                         <input
                             type="text"
+                            value={country}
                             placeholder="Nigeria"
                             className="outline-none"
                         />
@@ -138,7 +137,7 @@ const AboutSelf = () => {
                     }
                 </div>
 
-                <button onClick={handleSignIn} className="bg-primary-color text-white py-2 px-4 rounded-[8px] mt-5">
+                <button onClick={handleAboutSelfCreation} className="bg-primary-color text-white py-2 px-4 rounded-[8px] mt-5">
                     Confirm
                 </button>
                 <div className="text-center text-[#808080] mt-[70px] text-[14px]">
@@ -157,6 +156,9 @@ const AboutSelf = () => {
             <Link href="#" className="mr-4">Terms of Use</Link>
             </div>
         </div>
+        {
+            msg && <Alert msg={msg} setMsg={setMsg} alertType={alertType}/>
+        }
     </div>
   )
 }

@@ -25,6 +25,7 @@ import SaveAsset from './pages/save-asset/SaveAsset'
 import TransactionInfo from './pages/transaction-info/TransactionInfo'
 import AboutSelf from './pages/about-self/AboutSelf'
 import ConfirmEmail from './pages/confirm-email/ConfirmEmail'
+import Login from './pages/login/Login'
 
 function App() {
 
@@ -54,6 +55,7 @@ function App() {
         <Route path="/transaction-info" element={<TransactionInfo />} />
         <Route path="/about-self" element={<AboutSelf />} />
         <Route path="/confirm-email" element={<ConfirmEmail />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </HashRouter>
   )
