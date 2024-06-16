@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { MdClose } from "react-icons/md";
 import './App.css'
 import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom'
 import Dashboard from './pages/dashboard/Dashboard'
