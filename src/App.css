@@ -32,3 +32,7 @@
   background: #757575; 
   border-radius: 10px;
 }
+
+.leader-board-img{
+  background-image: url('../public/images/leader-board-background.svg');
+}

@@ -23,6 +23,8 @@ import WithdrawProvider from './pages/withdraw-provider/WithdrawProvider'
 import WithdrawViaLink from './pages/withdraw-via-link/WithdrawViaLink'
 import SaveAsset from './pages/save-asset/SaveAsset'
 import TransactionInfo from './pages/transaction-info/TransactionInfo'
+import AboutSelf from './pages/about-self/AboutSelf'
+import ConfirmEmail from './pages/confirm-email/ConfirmEmail'
 
 function App() {
 
@@ -50,6 +52,8 @@ function App() {
         <Route path="/withdraw-via-link" element={<WithdrawViaLink />} />
         <Route path="/save-asset/:asset" element={<SaveAsset />} />
         <Route path="/transaction-info" element={<TransactionInfo />} />
+        <Route path="/about-self" element={<AboutSelf />} />
+        <Route path="/confirm-email" element={<ConfirmEmail />} />
       </Routes>
     </HashRouter>
   )

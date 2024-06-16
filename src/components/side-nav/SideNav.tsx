@@ -9,6 +9,8 @@ import { TbLogout } from "react-icons/tb";
 import { TbMessageQuestion } from "react-icons/tb";
 import { MdOutlineSavings } from "react-icons/md";
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { BsEmojiSmile } from "react-icons/bs";
+
 
 const SideNav = () => {
 
@@ -24,7 +26,7 @@ const SideNav = () => {
           <p className="text-[12px] text-[#98A2B3] mb-2 px-3">DASHBOARD</p>
           <Link to='/get-started' className={ location.pathname.includes('/get-started') ? `flex items-center justify-between py-[10px] text-[#072AC8] bg-[#072AC81F] px-5` :`px-5 flex items-center justify-between py-[10px] text-[#101828]`}>
             <div className="flex items-center">
-              <RxDashboard />
+              <BsEmojiSmile />
               <p className="ml-[10px]">Get Started</p>
             </div>
           </Link>

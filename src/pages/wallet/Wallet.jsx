@@ -39,6 +39,156 @@ const Wallet = () => {
                           </div>
                         </div>
                     </div>
+                    <div className="rounded-lg w-full mx-auto bg-[#F8F8F8] border p-[1rem] mt-[1rem]">
+                      <p className='text-[#121212]'>Spendable assets</p>
+                      <table className="w-full text-sm text-left rtl:text-left mt-[1rem]">
+                          <thead className="text-[12px] text-[#121212]">
+                              <tr>
+                                  <th scope="col" className="py-3 th1 font-[400]">Name</th>
+                                  <th scope="col" className="py-3 font-[400]">Amount</th>
+                                  <th scope="col" className="py-3 font-[400]">Action</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr className='text-[12px]'>
+                                  <td className="py-4">
+                                    <p className='text-[#121212]'>Stellar Lumens</p>
+                                    <p className='text-[#828282]'>XLM</p>
+                                  </td>
+                                  <td className="py-4">₦100,000.00</td>
+                                  <td className="py-4 flex items-center gap-2">
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Deposit</p>
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Withdraw</p>
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Convert</p>
+                                  </td>
+                              </tr>
+                              <tr className='text-[12px]'>
+                                  <td className="py-4">
+                                    <p className='text-[#121212]'>Bitcoin</p>
+                                    <p className='text-[#828282]'>BTC</p>
+                                  </td>
+                                  <td className="py-4">₦100,000.00</td>
+                                  <td className="py-4 flex items-center gap-2">
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Deposit</p>
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Withdraw</p>
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Convert</p>
+                                  </td>
+                              </tr>
+                              <tr className='text-[12px]'>
+                                  <td className="py-4">
+                                    <p className='text-[#121212]'>Ethereum</p>
+                                    <p className='text-[#828282]'>ETH</p>
+                                  </td>
+                                  <td className="py-4">₦100,000.00</td>
+                                  <td className="py-4 flex items-center gap-2">
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Deposit</p>
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Withdraw</p>
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Convert</p>
+                                  </td>
+                              </tr>
+                              <tr className='text-[12px]'>
+                                  <td className="py-4">
+                                    <p className='text-[#121212]'>US Dollar</p>
+                                    <p className='text-[#828282]'>UDSC</p>
+                                  </td>
+                                  <td className="py-4">₦100,000.00</td>
+                                  <td className="py-4 flex items-center gap-2">
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Deposit</p>
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Withdraw</p>
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Convert</p>
+                                  </td>
+                              </tr>
+                              <tr className='text-[12px]'>
+                                  <td className="py-4">
+                                    <p className='text-[#121212]'>Nigerian Naira</p>
+                                    <p className='text-[#828282]'>NGN</p>
+                                  </td>
+                                  <td className="py-4">₦100,000.00</td>
+                                  <td className="py-4 flex items-center gap-2">
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Deposit</p>
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Withdraw</p>
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Convert</p>
+                                  </td>
+                              </tr>
+                              
+                          </tbody>
+                      </table>
+                    </div>
+                    <div className="rounded-lg w-full mx-auto bg-[#F8F8F8] border p-[1rem] mt-[1rem]">
+                      <p className='text-[#121212]'>Saved assets</p>
+                      <table className="w-full text-sm text-left rtl:text-left mt-[1rem]">
+                          <thead className="text-[12px] text-[#121212]">
+                              <tr>
+                                  <th scope="col" className="py-3 th1 font-[400]">Name</th>
+                                  <th scope="col" className="py-3 font-[400]">Amount</th>
+                                  <th scope="col" className="py-3 font-[400]">Action</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr className='text-[12px]'>
+                                  <td className="py-4">
+                                    <p className='text-[#121212]'>Stellar Lumens</p>
+                                    <p className='text-[#828282]'>XLM</p>
+                                  </td>
+                                  <td className="py-4">₦100,000.00</td>
+                                  <td className="py-4 flex items-center gap-2">
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Deposit</p>
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Withdraw</p>
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Convert</p>
+                                  </td>
+                              </tr>
+                              <tr className='text-[12px]'>
+                                  <td className="py-4">
+                                    <p className='text-[#121212]'>Bitcoin</p>
+                                    <p className='text-[#828282]'>BTC</p>
+                                  </td>
+                                  <td className="py-4">₦100,000.00</td>
+                                  <td className="py-4 flex items-center gap-2">
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Deposit</p>
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Withdraw</p>
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Convert</p>
+                                  </td>
+                              </tr>
+                              <tr className='text-[12px]'>
+                                  <td className="py-4">
+                                    <p className='text-[#121212]'>Ethereum</p>
+                                    <p className='text-[#828282]'>ETH</p>
+                                  </td>
+                                  <td className="py-4">₦100,000.00</td>
+                                  <td className="py-4 flex items-center gap-2">
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Deposit</p>
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Withdraw</p>
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Convert</p>
+                                  </td>
+                              </tr>
+                              <tr className='text-[12px]'>
+                                  <td className="py-4">
+                                    <p className='text-[#121212]'>US Dollar</p>
+                                    <p className='text-[#828282]'>UDSC</p>
+                                  </td>
+                                  <td className="py-4">₦100,000.00</td>
+                                  <td className="py-4 flex items-center gap-2">
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Deposit</p>
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Withdraw</p>
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Convert</p>
+                                  </td>
+                              </tr>
+                              <tr className='text-[12px]'>
+                                  <td className="py-4">
+                                    <p className='text-[#121212]'>Nigerian Naira</p>
+                                    <p className='text-[#828282]'>NGN</p>
+                                  </td>
+                                  <td className="py-4">₦100,000.00</td>
+                                  <td className="py-4 flex items-center gap-2">
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Deposit</p>
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Withdraw</p>
+                                    <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Convert</p>
+                                  </td>
+                              </tr>
+                              
+                          </tbody>
+                      </table>
+                    </div>
                 </div>
             </div>
         </div>

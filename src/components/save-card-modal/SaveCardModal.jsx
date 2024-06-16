@@ -33,7 +33,7 @@ const SaveCardModal = ({setSaveCardModal}) => {
                     </div>
                 </div>
             </div>
-            <div className='px-8 mt-7 mb-[8rem]'>
+            <div className='px-8 mt-7 mb-[4rem]'>
                 <p className='text-[20px]'>Earning with {saveCard.itemTitle}</p>
                 <p className='text-[#828282] text-[14px]'>Adding money to your {saveCard.itemTitle} earn accounts means you will convert your {saveCard.itemTitle} to Y{saveCard.itemTitle}, an interest earning varient of {saveCard.itemTitle}. y{saveCard.itemTitle} is issued by ultra capital and you can always convert y{saveCard.itemTitle} back to {saveCard.itemTitle}.</p>
             </div>

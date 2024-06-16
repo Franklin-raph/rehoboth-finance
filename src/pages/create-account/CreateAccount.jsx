@@ -47,7 +47,7 @@ const CreateAccount = () => {
               <h2 className="text-2xl font-semibold">Create account</h2>
               <p className="text-[#667085] text-[14px]">Dive back into a world of premium features and explore the endless possibilities that await. Reconnect and continue your journey today.</p>
             </div>
-            <div className="flex flex-col w-[300px] mx-auto">
+            <div className="flex flex-col w-[400px] mx-auto">
 
               <div className="w-full flex flex-col gap-3 mb-[20px]">
                 <button className="border border-[#D0D5DD] text-[#344054] py-2 px-4 rounded-[8px] flex items-center justify-center w-full shadow">
@@ -66,7 +66,7 @@ const CreateAccount = () => {
                 <div className="h-[1px] bg-[#dbdbdb] w-full"></div>
               </div>
 
-              <div className="mb-5">
+              <div>
                 <label htmlFor="email" className="text-[#121212] gont-[500] text-[14px] mb-1 block">Email</label>
                 <input
                   type="email"
@@ -74,8 +74,16 @@ const CreateAccount = () => {
                   className="border border-gray-300 text-[#707070] p-2 rounded-[8px] w-full"
                 />
               </div>
-              <div>
+              <div className="my-5">
                 <label htmlFor="password" className="text-[#121212] gont-[500] text-[14px] mb-1 block">Password</label>
+                <input
+                  type="password"
+                  placeholder="********"
+                  className="border border-gray-300 p-2 rounded-[8px] w-full"
+                />
+              </div>
+              <div>
+                <label htmlFor="password" className="text-[#121212] gont-[500] text-[14px] mb-1 block">Confirm Password</label>
                 <input
                   type="password"
                   placeholder="********"

@@ -29,7 +29,7 @@ const EarnPointsModal = ({setEarnPointsModal}) => {
                     </div>
                 </div>
             </div>
-            <div className='px-4 mt-7 mb-[12rem]'>
+            <div className='px-4 mt-7 mb-[6rem]'>
                 <p className='text-[20px]'>Follow Rehoboth Finance on Instagram</p>
                 <p className='text-[#828282] text-[14px]'>Follow us on instagram, react and comment on pinned posts.</p>
             </div>
