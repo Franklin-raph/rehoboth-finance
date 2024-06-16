@@ -11,7 +11,7 @@ const AuthNav = () => {
                 <img src="./images/rehoboth-logo.svg" alt="" />
             </Link>
             <ul className="flex items-center gap-10">
-                <li className="text-[#667085] flex items-center gap-2">
+                <li className="text-[#667085] flex items-center gap-2 cursor-pointer">
                     <p>Blog</p>
                     <FaChevronDown />
                 </li>

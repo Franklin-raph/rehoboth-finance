@@ -59,7 +59,7 @@ const ConfirmEmail = () => {
                     Confirm
                 </button>
                 <div className="text-center text-[#808080] mt-[70px] text-[14px]">
-                    Already have an account? <a href="/login" className="text-blue-600">Log in</a>
+                    Already have an account? <Link to="/login" className="text-blue-600">Log in</Link>
                 </div>
                 </div>
             </div>

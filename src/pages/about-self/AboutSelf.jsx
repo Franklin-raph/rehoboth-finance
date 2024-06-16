@@ -141,7 +141,7 @@ const AboutSelf = () => {
                     Confirm
                 </button>
                 <div className="text-center text-[#808080] mt-[70px] text-[14px]">
-                    Already have an account? <a href="/login" className="text-blue-600">Log in</a>
+                    Already have an account? <Link to="/login" className="text-blue-600">Log in</Link>
                 </div>
                 </div>
             </div>
@@ -149,11 +149,11 @@ const AboutSelf = () => {
         </div>
         <div className="mt-[100px] mb-5 mx-10 flex items-center justify-between">
             <p className="text-[#808080] text-[12px]">
-            &copy; {new Date().getFullYear()} Rehoboth finance. All rights reserved.
+                &copy; {new Date().getFullYear()} Rehoboth finance. All rights reserved.
             </p>
             <div className="text-[#808080] text-[12px] flex items-center gap-4">
-            <Link href="#">Privacy Policy</Link>
-            <Link href="#" className="mr-4">Terms of Use</Link>
+                <Link href="#">Privacy Policy</Link>
+                <Link href="#" className="mr-4">Terms of Use</Link>
             </div>
         </div>
         {

@@ -16,6 +16,11 @@ const SideNav = () => {
 
    const navigate = useNavigate()
    const location = useLocation()
+
+   function handleLogout(){
+    localStorage.clear()
+    navigate('/login')
+   }
   
   return (
     <div className='bg-[#ffffff] border border-[#BDBDBD] scrollbar w-[18%]' style={{ borderTopRightRadius:'8px', borderBottomRightRadius:'8px' }}>
@@ -96,17 +101,17 @@ const SideNav = () => {
                 <p className="ml-[10px]">Help & Support</p>
             </div>
           </Link>
-          <Link to='/' className='px-5 flex items-center justify-between py-[10px] text-[#101828]'>
+          <div onClick={handleLogout} className='cursor-pointer px-5 flex items-center justify-between py-[10px] text-[#101828]'>
             <div className="flex items-center">
               <TbLogout />
               <p className="ml-[10px]">Logout</p>
             </div>
-          </Link>
+          </div>
         </div>
 
         <div className="ml-[10px] mt-[15rem] mb-16">
           <div className="flex align-center">
-              <img src="/images/Avatar.svg"className="w-[50px]" style={{ marginRight: 12, }} />
+              <img src="/images/Avatar.svg" className="w-[50px]" style={{ marginRight: 12, }} />
               <div>
                 <p className='text-[#101828] text-[14px] font-[500]'>Lucky Nweke</p>
                 <p className="text-[#6F7975] text-[12px] tex-[#98A2B3]">favour@havilahstudios.com</p>
