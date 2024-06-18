@@ -51,7 +51,7 @@ const SideNav = () => {
 
         <div className=" my-10 text-white">
           <p className="text-[12px] text-[#98A2B3] mb-2 px-3">FINANCE</p>
-          <Link to='/wallet' className={ location.pathname.includes('wallet')  ? `flex items-center justify-between py-[10px] text-[#072AC8] bg-[#072AC81F] px-5` :`px-5 flex items-center justify-between py-[10px] text-[#101828]`}>
+          <Link to='/wallet' className={ location.pathname.includes('wallet') || location.pathname.includes('send')  ? `flex items-center justify-between py-[10px] text-[#072AC8] bg-[#072AC81F] px-5` :`px-5 flex items-center justify-between py-[10px] text-[#101828]`}>
             <div className="flex items-center">
                 <IoWalletOutline />
                 <p className="ml-[10px]">Wallet</p>

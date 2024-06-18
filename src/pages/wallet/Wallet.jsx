@@ -5,8 +5,12 @@ import { GoChevronDown } from "react-icons/go";
 import { BsArrowDown, BsArrowUp } from "react-icons/bs";
 import { PiArrowElbowUpLeftLight } from "react-icons/pi";
 import { VscArrowSmallRight } from "react-icons/vsc";
+import { useNavigate } from 'react-router-dom';
 
 const Wallet = () => {
+
+  const navigate = useNavigate()
+
   return (
     <div>
         <div className='flex items-start bg-[#F5F5F5]'>
@@ -14,8 +18,9 @@ const Wallet = () => {
             <div className="w-[84%] bg-[#F5F5F5] ml-auto">
                 <TopNav />
                 <div className="px-[20px] py-[30px] rounded-[8px] mt-5 mx-[25px] bg-[#FFFFFF] border border-[#BDBDBD]">
-                    <div className='mb-6'>
+                    <div className='mb-6 flex items-end justify-between'>
                         <p className='text-[#151517] font-[500] text-[24px]'>My Wallet</p>
+                        <p onClick={() => navigate('/send')} className='text-[#3458D9] bg-[#072AC81F] text-[14px] py-[3px] px-2 rounded-[4px] cursor-pointer'>Send Funds</p>
                         {/* <p className='text-[#767676] text-[14px] font-[300]'>Welcome to Rehoboth finance </p> */}
                     </div>
                     <div className='flex items-center gap-5'>
@@ -185,7 +190,6 @@ const Wallet = () => {
                                     <p className='text-[#3458D9] bg-[#7B93FE08] py-[3px] px-2 rounded-[4px] cursor-pointer'>Convert</p>
                                   </td>
                               </tr>
-                              
                           </tbody>
                       </table>
                     </div>
