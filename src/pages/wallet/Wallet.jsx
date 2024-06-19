@@ -6,6 +6,7 @@ import { BsArrowDown, BsArrowUp } from "react-icons/bs";
 import { PiArrowElbowUpLeftLight } from "react-icons/pi";
 import { VscArrowSmallRight } from "react-icons/vsc";
 import { useNavigate } from 'react-router-dom';
+import { GiCash } from "react-icons/gi";
 
 const Wallet = () => {
 
@@ -20,7 +21,8 @@ const Wallet = () => {
                 <div className="px-[20px] py-[30px] rounded-[8px] mt-5 mx-[25px] bg-[#FFFFFF] border border-[#BDBDBD]">
                     <div className='mb-6 flex items-end justify-between'>
                         <p className='text-[#151517] font-[500] text-[24px]'>My Wallet</p>
-                        <p onClick={() => navigate('/send')} className='text-[#3458D9] bg-[#072AC81F] text-[14px] py-[3px] px-2 rounded-[4px] cursor-pointer'>Send Funds</p>
+                        <p onClick={() => navigate('/send')} className='text-[#3458D9] bg-[#072AC81F] text-[14px] py-[3px] px-2 rounded-[4px] cursor-pointer flex items-center gap-1'>
+                          <GiCash />Send Funds</p>
                         {/* <p className='text-[#767676] text-[14px] font-[300]'>Welcome to Rehoboth finance </p> */}
                     </div>
                     <div className='flex items-center gap-5'>

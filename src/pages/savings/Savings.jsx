@@ -68,9 +68,6 @@ const Savings = () => {
                                 }
                             </div>
                         </div>
-                        {/* <div className='bg-[#C7C7C71F] rounded-[11px] w-full h-[350px] flex items-center justify-center'>
-                            <p className='text-[30px] text-center w-[450px] mx-auto text-[#5D5D5D75] font-[300]'>No Active Quest At The Moment</p>
-                        </div> */}
                     </div>
                 </div>
             </div>
