@@ -10,6 +10,7 @@ import { MdOutlinePolicy } from "react-icons/md";
 import { MdMoreTime } from "react-icons/md";
 import { BiDollar } from "react-icons/bi";
 import { SiSolana } from "react-icons/si";
+import { PiCurrencyNgn } from "react-icons/pi";
 
 
 
@@ -191,7 +192,7 @@ const HelpAndSupport = () => {
                                   </div>
                                   <div className='flex items-center justify-between w-full bg-white mx-auto p-3 rounded-[8px] text-primary-color shadow-md cursor-pointer'>
                                     <div className='flex items-center gap-2'>
-                                      <MdOutlinePolicy />
+                                      <PiCurrencyNgn />
                                       <p>How to withdraw NGN</p>
                                     </div>
                                     <FiChevronRight />
