@@ -56,15 +56,15 @@ const AboutSelf = () => {
         <div className=" mt-[10rem]">
             <div className=" z-[10] w-[70%] mx-auto h-[80%] absolute left-[50%] top-[-5%] blury-bg"  style={{ transform: "translate(-50%, 0%)" }}></div>
             <div className=" flex flex-col justify-center items-center relative z-[11]">
-            <div className="bg-white px-8 pt-8 pb-5 rounded-[16px] shadow-lg w-full max-w-[588px]">
-                <div className="top-bg relative top-[-20px] flex items-center justify-center w-[300px] mx-auto">
-                <img src="./images/logo.svg" alt="Rehoboth Finance Logo" className="mx-auto mb-4 relative top-[-65px] left-[11px]" />
+            <div className="bg-white px-4 sm:px-8 pt-8 pb-5 rounded-[16px] sm:shadow-lg w-full max-w-[588px]">
+                <div className="top-bg relative top-[-20px] hidden sm:flex items-center justify-center w-[300px] mx-auto">
+                    <img src="./images/logo.svg" alt="Rehoboth Finance Logo" className="mx-auto mb-4 relative top-[-65px] left-[11px]" />
                 </div>
                 <div className="text-center mb-12 mt-[-80px] relative z-[100]">
-                <h2 className="text-2xl font-semibold">Tell us a little about you</h2>
-                <p className="text-[#667085] text-[14px]">These details would help us set up your account profile</p>
+                <h2 className="text-2xl font-semibold mb-2">Tell us a little about you</h2>
+                <p className="text-[#667085] sm:text-[14px] text-[12px]">These details would help us set up your account profile</p>
                 </div>
-                <div className="flex flex-col w-[400px] mx-auto">
+                <form className="flex flex-col sm:w-[400px] mx-auto">
 
                 <div>
                     <label className="text-[#121212] gont-[500] text-[14px] mb-1 block">First Name</label>
@@ -101,7 +101,7 @@ const AboutSelf = () => {
                             type="text"
                             value={country}
                             placeholder="Nigeria"
-                            className="outline-none"
+                            className="outline-none w-full"
                         />
                         <FaChevronDown className='cursor-pointer text-gray-300' onClick={() => setShowCountries(!showCountries)}/>
                     </div>
@@ -140,14 +140,14 @@ const AboutSelf = () => {
                 <button onClick={handleAboutSelfCreation} className="bg-primary-color text-white py-2 px-4 rounded-[8px] mt-5">
                     Confirm
                 </button>
-                <div className="text-center text-[#808080] mt-[70px] text-[14px]">
+                <div className="text-center text-[#808080] mt-5 sm:mt-[70px] text-[14px]">
                     Already have an account? <Link to="/login" className="text-blue-600">Log in</Link>
                 </div>
-                </div>
+                </form>
             </div>
             </div>
         </div>
-        <div className="mt-[100px] mb-5 mx-10 flex items-center justify-between">
+        <div className="mt-[100px] mb-5 sm:mx-10 flex sm:flex-row flex-col sm:gap-0 gap-3 items-center justify-between">
             <p className="text-[#808080] text-[12px]">
                 &copy; {new Date().getFullYear()} Rehoboth finance. All rights reserved.
             </p>
