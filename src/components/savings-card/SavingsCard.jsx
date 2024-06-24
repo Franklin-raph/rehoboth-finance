@@ -9,7 +9,7 @@ const SavingsCard = ({item, setSaveCardModal}) => {
     };
 
   return (
-    <div className="mx-auto bg-white p-6">
+    <div className="mx-auto bg-white lg:p-6 p-3 rounded-[8px]">
         <div className="flex items-center mb-4">
             <img
                 src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png" // Replace with the appropriate URL of the USD Coin logo

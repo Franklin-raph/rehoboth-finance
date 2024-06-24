@@ -50,7 +50,7 @@ const Savings = () => {
             <div className="w-full lg:w-[84%] bg-[#F5F5F5] ml-auto mb-10">
                 <TopNav />
                 <div className="lg:px-[10px] pb-[30px] pt-[10px] lg:bg-white bg-transparent mt-5 lg:mx-[30px]">
-                    <div className='px-[10px]'>
+                    <div className='lg:px-[10px]'>
                         <div className='lg:bg-[#C7C7C71F] bg-transparent rounded-[11px] w-full py-[30px] px-[10px] border-transparent lg:border border-[#BDBDBD]'>
                             <div className='w-[70%] lg:mb-20 mb-5'>
                                 <p className='lg:text-[32px] text-[20px] text-primary-color'>Our tokens and reward rates</p>

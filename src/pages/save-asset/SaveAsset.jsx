@@ -22,7 +22,7 @@ const SaveAsset = () => {
                 </div>
                 <div className='pt-[3rem] pb-[9rem] flex justify-center items-center rounded-[11px] lg:mt-9 lg:bg-[#F1F1F1] flex-col'>
                   <div className="flex justify-center items-center w-full">
-                      <div className="bg-[#F8F8F8] py-6 sm:px-[40px] p-[30px] rounded-[8px] shadow lg:w-[500px] w-full border border-[#B2B2B27A]">
+                      <div className="bg-[#F8F8F8] py-6 sm:px-[40px] p-[15px] rounded-[8px] shadow lg:w-[500px] w-full border border-[#B2B2B27A]">
                           <div className="mb-4">
                               <div className="flex justify-between items-center">
                                   <p className="text-[#383838] text-[14px] font-[300]">Save amount</p>
