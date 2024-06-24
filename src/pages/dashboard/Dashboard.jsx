@@ -11,7 +11,7 @@ const Dashboard = () => {
     <div>
         <div className='flex items-start bg-[#F5F5F5]'>
             <SideNav />
-            <div className="w-[84%] bg-[#F5F5F5] ml-auto">
+            <div className="w-full lg:w-[84%] bg-[#F5F5F5] ml-auto">
                 <TopNav />
                 <div className="p-[10px] rounded-[8px] mt-5 mx-[25px] bg-[#FFFFFF] border border-[#BDBDBD]">
                     <div className='mb-6'>

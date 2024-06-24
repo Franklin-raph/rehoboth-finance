@@ -7,7 +7,7 @@ const GetStarted = () => {
     <div>
         <div className='flex items-start bg-[#F5F5F5]'>
             <SideNav />
-            <div className="w-[84%] bg-[#F5F5F5] ml-auto">
+            <div className="w-full lg:w-[84%] bg-[#F5F5F5] ml-auto">
                 <TopNav />
                 <div className="px-[30px] py-[1rem]">
                 

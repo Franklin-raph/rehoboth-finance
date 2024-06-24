@@ -30,8 +30,8 @@ const ConfirmEmail = () => {
     <div className="relative">
         <AuthNav />
 
-        <div className=" mt-[10rem]">
-            <div className=" z-[10] w-[70%] mx-auto h-[80%] absolute left-[50%] top-[-5%] blury-bg"  style={{ transform: "translate(-50%, 0%)" }}></div>
+        <div className="sm:mt-[10rem] mt-[7rem]">
+            <div className="hidden sm:block z-[10] w-[70%] mx-auto h-[80%] absolute left-[50%] top-[-5%] blury-bg"  style={{ transform: "translate(-50%, 0%)" }}></div>
             <div className=" flex flex-col justify-center items-center relative z-[11]">
             <div className="bg-white px-4 sm:px-8 pt-8 pb-5 rounded-[16px] sm:shadow-lg w-full sm:w-[588px]">
                 <div className="top-bg relative top-[-20px] hidden sm:flex items-center justify-center w-[300px] mx-auto">

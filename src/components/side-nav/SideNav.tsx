@@ -24,7 +24,7 @@ const SideNav = () => {
    }
   
   return (
-    <div className='bg-[#ffffff] border border-[#BDBDBD] scrollbar w-[18%]' style={{ borderTopRightRadius:'8px', borderBottomRightRadius:'8px' }}>
+    <div className='bg-[#ffffff] border border-[#BDBDBD] scrollbar w-[18%] hidden lg:block' style={{ borderTopRightRadius:'8px', borderBottomRightRadius:'8px' }}>
         <div className='p-5 border-b cursor-pointer'>
             <img src="./images/rehoboth-logo.svg" alt="" />
         </div>

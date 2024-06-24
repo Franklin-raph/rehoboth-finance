@@ -2,6 +2,10 @@
   font-family: 'Poppins';
 }
 
+html,body{
+  overflow-x: hidden !important;
+}
+
 .top-bg{
   background-image: url('../public/images/toptexture.svg');
 }
@@ -92,5 +96,11 @@
   .otp-input{
     width: 50px !important;
     height: 50px !important;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .responsive-widths{
+    width: 100% !important;
   }
 }
