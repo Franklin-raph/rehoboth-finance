@@ -31,17 +31,17 @@ const filteredCurrencies = currencies.filter((currency) =>
     <div>
         <div className='flex items-start bg-[#F5F5F5]'>
             <SideNav />
-            <div className="w-[84%] bg-[#F5F5F5] ml-auto">
+            <div className="w-full lg:w-[84%] bg-[#F5F5F5] ml-auto">
                 <TopNav />
-                <div className="p-[10px] rounded-[8px] mt-5 mx-[25px] bg-[#FFFFFF] border border-[#BDBDBD]">
-                  <div className='mt-5 ml-1'>
-                    <p className='text-primary-color text-[32px]'>Withdraw money</p>
+                <div className="p-[10px] rounded-[8px] mt-5 lg:mx-[25px] bg-transparent lg:bg-[#FFFFFF] border border-transparent lg:border-[#BDBDBD]">
+                  <div className='mt-5 ml-1 hidden lg:block'>
+                    <p className='text-primary-color text-[32px]'>Withdraw Money</p>
                     <p className='font-[300] text-[#737985]'>Buy crypto with your money</p>
                   </div>
                   <div className='mt-9'>
-                    <h2 className="text-center text-[#151517] mb-2">Choose your withdrawal currency</h2>
+                    <h2 className="lg:text-center lg:text-[#151517] text-primary-color mb-2 font-[500] lg:font-[400] text-left">Choose your withdrawal currency</h2>
                     <div className='flex items-center gap-5'>
-                        <div className="w-[500px] mx-auto p-4 bg-[#F8F8F8] rounded-lg border border-[#B2B2B27A]">
+                        <div className="lg:w-[500px] w-full mx-auto lg:px-4 py-4 lg:bg-[#F8F8F8] bg-transparent rounded-lg border border-transparent lg:border-[#B2B2B27A]">
                             <div className="w-full p-2 mb-4 border border-[#B2B2B27A] bg-white rounded-lg flex items-center gap-1">
                                 <CiSearch className='text-[22px]'/>
                                 <input
@@ -49,7 +49,7 @@ const filteredCurrencies = currencies.filter((currency) =>
                                     placeholder="Search transactions, assets etc."
                                     value={searchTerm}
                                     onChange={(e) => setSearchTerm(e.target.value)}
-                                    className="outline-none bg-transparent"
+                                    className="outline-none bg-transparent w-full"
                                 />
                             </div>
                             <ul>

@@ -2,35 +2,34 @@ import React from 'react'
 import { RiBankLine } from 'react-icons/ri'
 import SideNav from '../../components/side-nav/SideNav'
 import TopNav from '../../components/top-nav/TopNav'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const DepositProvider = () => {
 
     const { country } = useParams()
+    const navigate = useNavigate()
     // decodeURIComponent(pathname.split("/deposit/")[1])
   return (
     <div>
         <div className='flex items-start bg-[#F5F5F5]'>
             <SideNav />
-            <div className="w-[84%] bg-[#F5F5F5] ml-auto">
+            <div className="w-full lg:w-[84%] bg-[#F5F5F5] ml-auto">
                 <TopNav />
-                <div className="px-[10px] t-[10px] pb-[3rem] rounded-[8px] mt-5 mx-[25px] bg-[#FFFFFF] border border-[#BDBDBD]">
-                <div className='mt-5 ml-1'>
+                <div className="p-[10px] rounded-[8px] mt-5 lg:mx-[25px] bg-transparent lg:bg-[#FFFFFF] border border-transparent lg:border-[#BDBDBD]">
+                <div className='mt-5 ml-1 hidden lg:block'>
                     <p className='text-primary-color text-[32px]'>Deposit</p>
                     <p className='font-[300] text-[#737985]'>Buy crypto with your money</p>
                 </div>
                 <div className='mt-9'>
-                    <h2 className="text-center text-[#151517] mb-2">Choose a provider</h2>
+                    <h2 className="text-center lg:text-[#151517] text-primary-color mb-2 font-[500] lg:font-[400]">Choose a provider</h2>
                     <div className='flex items-center gap-5'>
-                        <div className="w-[500px] mx-auto p-2 bg-[#F8F8F8] rounded-lg border border-[#B2B2B27A]">
+                        <div className="w-[500px] mx-auto lg:p-2 bg-[#F8F8F8] rounded-lg border border-[#B2B2B27A] responsive-widths">
                             <div className='bg-white p-3 rounded-[8px]'>
                             <div className='flex items-center justify-between'>
                                 <div>
                                 <p className='text-[#121212]'>Link</p>
                                 <p className='font-300 text-[#828282]'>
-                                    {
-                                        country
-                                    }
+                                    {country}
                                 </p>
                                 </div>
                                 <div className='bg-[#CCD6FF54] p-1 rounded-full'>
@@ -42,10 +41,14 @@ const DepositProvider = () => {
                                 <p className='font-300 text-[#828282]'>Dynamic partner fees</p>
                             </div>
                             </div>
-                            <div className='flex items-center justify-center'>
-                            <button className='py-2 w-[90%] mx-auto text-white bg-primary-color rounded-[6px] mb-3 mt-[4rem]'>Deposit via link</button>
+                            <div className='lg:flex items-center justify-center hidden'>
+                            <button className='py-2 w-[90%] mx-auto text-white bg-primary-color rounded-[6px] mb-3 mt-[4rem]' onClick={() => navigate(`/deposit-provider/${country}/provider`)} >Proceed</button>
                             </div>
                         </div>
+                    </div>
+                    
+                    <div className='lg:hidden items-center justify-center flex mt-[8rem] mb-[3rem] w-[500px] mx-auto responsive-widths'>
+                        <button className='py-2 w-full mx-auto text-white bg-primary-color rounded-[6px] mb-3 mt-[4rem]' onClick={() => navigate(`/deposit-provider/${country}/provider`)} >Proceed</button>
                     </div>
                 </div>
                 </div>

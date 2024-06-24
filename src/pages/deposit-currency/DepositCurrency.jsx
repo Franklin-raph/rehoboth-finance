@@ -21,7 +21,7 @@ const DepositCurrency = () => {
                     <p className='font-[300] text-[#737985]'>Buy crypto with your money</p>
                   </div>
                   <div className='mt-9'>
-                    <h2 className="text-center text-[#151517] mb-2">Choose your deposit method</h2>
+                    <h2 className="text-center lg:text-[#151517] text-primary-color mb-2 font-[500] lg:font-[400]">Choose your deposit method</h2>
                     <div className='flex items-center gap-5'>
                         <div className="w-[500px] mx-auto lg:p-2 bg-[#F8F8F8] rounded-lg border border-[#B2B2B27A] responsive-widths">
                             <div className='bg-white p-3 rounded-[8px]'>
