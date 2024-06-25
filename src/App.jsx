@@ -26,13 +26,15 @@ import AboutSelf from './pages/about-self/AboutSelf'
 import ConfirmEmail from './pages/confirm-email/ConfirmEmail'
 import Login from './pages/login/Login'
 import Send from './pages/send/Send';
+import Home from './pages/home/Home';
 
 function App() {
 
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={<CreateAccount />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/create-account" element={<CreateAccount />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/create-account" element={<CreateAccount />} />
         <Route path="/deposit" element={<Deposit />} />
