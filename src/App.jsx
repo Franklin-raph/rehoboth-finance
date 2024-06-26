@@ -30,7 +30,7 @@ import Home from './pages/home/Home';
 
 function App() {
 
-  const baseUrl = 'https://backend-lem4.onrender.com/api/'
+  const baseUrl = 'https://backend-lem4.onrender.com/api'
   const API_KEY = 'GISUYDre8wt7984yupor5jp80YT%^%Rfuyih2wrk*&*^%&$^HJLIUTYDFwe576284'
 
   return (

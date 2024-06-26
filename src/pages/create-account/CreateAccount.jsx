@@ -8,18 +8,23 @@ import { GoEye, GoEyeClosed } from "react-icons/go";
 import AuthNav from '../../components/auth-nav/AuthNav';
 import Alert from '../../components/alert/Alert';
 
-const CreateAccount = () => {
+const CreateAccount = ({baseUrl, API_KEY}) => {
 
     const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [username, setUserName] = useState('')
+    const [countryCode, setCountryCode] = useState('')
+    const [pincode, setPinCode] = useState('')
+    const [phonenumber, setPhoneNumber] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [passwordType, setPasswordType] = useState('password')
     const [msg, setMsg] = useState('')
     const [alertType, setAlertType] = useState('')
 
-    async function handleAccountCreation(){
-      if(!email || !password || !confirmPassword){
+    async function handleAccountCreation(e){
+      e.preventDefault()
+      if(!email || !password || !confirmPassword || !phonenumber || !pincode || !countryCode || !username){
         setMsg('Please fill in all fields')
         setAlertType('error')
         return
@@ -28,8 +33,24 @@ const CreateAccount = () => {
         setAlertType('error')
         return
       }else{
-        localStorage.setItem('createAccountEmail', email)
-        navigate('/confirm-email')
+        const res = await fetch(`${baseUrl}/auth/register`,{
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-KEY': API_KEY,
+          },
+          body: JSON.stringify({
+            email,
+            password,
+            username,
+            countryCode,
+            pincode,
+            phonenumber
+            
+          })
+        })
+        const data = await res.json()
+        console.log(data);
       }
     }
 
@@ -73,6 +94,46 @@ const CreateAccount = () => {
                 <input
                   type="email"
                   onChange={e => setEmail(e.target.value)}
+                  placeholder="olivia@rehoboth.com"
+                  className="border border-gray-300 text-[#707070] p-2 rounded-[8px] outline-none w-full"
+                />
+              </div>
+
+              <div className='my-5'>
+                <label htmlFor="username" className="text-[#121212] gont-[500] text-[14px] mb-1 block">User Name</label>
+                <input
+                  type="text"
+                  onChange={e => setUserName(e.target.value)}
+                  placeholder="olivia@rehoboth.com"
+                  className="border border-gray-300 text-[#707070] p-2 rounded-[8px] outline-none w-full"
+                />
+              </div>
+
+              <div className='my-5'>
+                <label htmlFor="pincode" className="text-[#121212] gont-[500] text-[14px] mb-1 block">Pin Code</label>
+                <input
+                  type="text"
+                  onChange={e => setPinCode(e.target.value)}
+                  placeholder="olivia@rehoboth.com"
+                  className="border border-gray-300 text-[#707070] p-2 rounded-[8px] outline-none w-full"
+                />
+              </div>
+
+              <div className='my-5'>
+                <label htmlFor="phonenumber" className="text-[#121212] gont-[500] text-[14px] mb-1 block">Phone Number</label>
+                <input
+                  type="text"
+                  onChange={e => setPhoneNumber(e.target.value)}
+                  placeholder="olivia@rehoboth.com"
+                  className="border border-gray-300 text-[#707070] p-2 rounded-[8px] outline-none w-full"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="phonenumber" className="text-[#121212] gont-[500] text-[14px] mb-1 block">Country Code</label>
+                <input
+                  type="text"
+                  onChange={e => setCountryCode(e.target.value)}
                   placeholder="olivia@rehoboth.com"
                   className="border border-gray-300 text-[#707070] p-2 rounded-[8px] outline-none w-full"
                 />
