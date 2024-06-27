@@ -7,27 +7,23 @@ import { GoEye, GoEyeClosed } from "react-icons/go";
 
 import AuthNav from '../../components/auth-nav/AuthNav';
 import Alert from '../../components/alert/Alert';
+import BtnLoader from '../../components/btn-loader/BtnLoader';
 
-const CreateAccount = ({baseUrl, API_KEY}) => {
+const CreateAccount = () => {
 
     const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [username, setUserName] = useState('')
-    const [countryCode, setCountryCode] = useState('')
-    const [pinCode, setPinCode] = useState('')
-    const [phoneNumber, setPhoneNumber] = useState('')
+    const [loading, setLoading] = useState(false)
     const [confirmPassword, setConfirmPassword] = useState('')
     const [passwordType, setPasswordType] = useState('password')
     const [msg, setMsg] = useState('')
     const [alertType, setAlertType] = useState('')
+    const API_KEY = import.meta.env.VITE_API_KEY
+    const BASE_URL = import.meta.env.VITE_BASE_URL
 
     async function handleAccountCreation(e){
-      console.log({
-        email,
-        password,
-        
-      });
+
       e.preventDefault()
       if(!email || !password || !confirmPassword){
         setMsg('Please fill in all fields')
@@ -38,11 +34,12 @@ const CreateAccount = ({baseUrl, API_KEY}) => {
         setAlertType('error')
         return
       }else{
-        const res = await fetch(`${baseUrl}/auth/register`,{
+        setLoading(true)
+        const res = await fetch(`${BASE_URL}/auth/register`,{
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Api-Key': API_KEY,
+            'Api-Key': `${API_KEY}`,
           },
           body: JSON.stringify({
             email,
@@ -50,7 +47,17 @@ const CreateAccount = ({baseUrl, API_KEY}) => {
             
           })
         })
+        if(res) setLoading(false)
         const data = await res.json()
+      if(!res.ok){
+        setMsg(data.message)
+        setAlertType('error')
+        return
+      }
+      if(res.ok){
+        localStorage.setItem('token', data.data.token)
+        navigate('/confirm-email')
+      }
         console.log(data);
       }
     }
@@ -58,7 +65,6 @@ const CreateAccount = ({baseUrl, API_KEY}) => {
   return (
     <div className="relative">
       <AuthNav />
-
       <div className="sm:mt-[10rem] mt-[7rem]">
         <div className="hidden sm:block z-[10] w-[70%] mx-auto h-[80%] absolute left-[50%] top-[-5%] blury-bg"  style={{ transform: "translate(-50%, 0%)" }}></div>
         <div className="flex flex-col justify-center items-center relative z-[11]">
@@ -139,10 +145,14 @@ const CreateAccount = ({baseUrl, API_KEY}) => {
                   </div>
                 </div>
               </div>
-
-              <button onClick={handleAccountCreation} className="bg-primary-color text-white py-2 px-4 rounded-[8px] mt-5">
-                Create Account
-              </button>
+              {
+                loading?
+                <BtnLoader />
+                :
+                <button onClick={handleAccountCreation} className="bg-primary-color text-white py-2 px-4 rounded-[8px] mt-5">
+                  Create Account
+                </button>
+              }
               <div className="text-center text-[#808080] mt-5 sm:mt-[70px] text-[14px]">
                 Already have an account? <Link to="/login" className="text-blue-600">Log in</Link>
               </div>

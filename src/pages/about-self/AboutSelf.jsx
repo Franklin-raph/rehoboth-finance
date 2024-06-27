@@ -5,6 +5,7 @@ import { FaChevronDown } from "react-icons/fa6";
 import { BsLightningCharge } from "react-icons/bs";
 import AuthNav from '../../components/auth-nav/AuthNav';
 import Alert from '../../components/alert/Alert';
+import BtnLoader from '../../components/btn-loader/BtnLoader';
 
 const AboutSelf = () => {
 
@@ -14,10 +15,11 @@ const AboutSelf = () => {
     const [loader, setLoader] = useState(false)
     const [searchText, setSeacrhText] = useState('')
     
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
+    const [transactionPin, setTransactionPin] = useState('')
+    const [confirmTransactionPin, setConfirmTransactionPin] = useState('')
     const [userName, setUserName] = useState('')
     const [country, setCountry] = useState('')
+    const [loading, setLoading] = useState(false)
 
     const [msg, setMsg] = useState('')
     const [alertType, setAlertType] = useState('')
@@ -41,12 +43,38 @@ const AboutSelf = () => {
     },[])
 
     async function handleAboutSelfCreation(){
-        if(!firstName || !lastName || !userName || !country){
+        if(!transactionPin || !confirmTransactionPin || !userName || !country){
             setMsg('Please fill in all fields')
             setAlertType('error')
             return
+        }else if(transactionPin !== confirmTransactionPin){
+            setMsg('Transaction PINs do not match')
+            setAlertType('error')
+            return
         }else{
-            navigate('/login')
+            setLoading(true)
+            const res = await fetch(`${BASE_URL}/user/about-self`,{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                    'Api-Key': `${API_KEY}`,
+                },
+                body: JSON.stringify({
+                    transactionPin,
+                    userName,
+                    country
+                })
+            })
+            const data = await res.json()
+            if(res) setLoading(false)
+            if(res.ok){
+                setAlertType('success')
+                navigate('/dashboard')
+            }else{
+                setMsg(data.message)
+                setAlertType('error')
+            }
         }
     }
 
@@ -61,47 +89,49 @@ const AboutSelf = () => {
                     <img src="./images/logo.svg" alt="Rehoboth Finance Logo" className="mx-auto mb-4 relative top-[-65px] left-[11px]" />
                 </div>
                 <div className="text-center mb-12 mt-[-80px] relative z-[100]">
-                <h2 className="text-2xl font-semibold mb-2">Tell us a little about you</h2>
-                <p className="text-[#667085] sm:text-[14px] text-[12px]">These details would help us set up your account profile</p>
+                <h2 className="text-2xl font-semibold mb-2">Create Your Wallet</h2>
+                <p className="text-[#667085] sm:text-[14px] text-[12px]">These details will help us set up your Rehoboth Wallet</p>
                 </div>
                 <form className="flex flex-col sm:w-[400px] mx-auto">
-
-                <div>
-                    <label className="text-[#121212] gont-[500] text-[14px] mb-1 block">First Name</label>
-                    <input
-                        type="text"
-                        onChange={e => setFirstName(e.target.value)}
-                        placeholder="Adeyemi"
-                        className="border border-gray-300 text-[#707070] p-2 rounded-[6px] outline-none w-full"
-                    />
-                </div>
-                <div className="my-5">
-                    <label className="text-[#121212] gont-[500] text-[14px] mb-1 block">Last Name</label>
-                    <input
-                        type="text"
-                        onChange={e => setLastName(e.target.value)}
-                        placeholder="Issac"
-                        className="border border-gray-300 p-2 rounded-[6px] outline-none w-full"
-                    />
-                </div>
-                <div>
-                    <label className="text-[#121212] gont-[500] text-[14px] mb-1 block">Username</label>
+                
+                <div className='my-7'>
+                    <label className="text-[#344054] font-[500] text-[14px] mb-1 block">Username</label>
                     <input
                         type="text"
                         onChange={e => setUserName(e.target.value)}
                         placeholder="Your nickname"
-                        className="border border-gray-300 p-2 rounded-[6px] w-full outline-none"
+                        className="border border-gray-300 p-2 rounded-[6px] w-full outline-none text-[#667085]"
                     />
                 </div>
 
-                <div className='my-5 relative'>
-                    <label className="text-[#121212] gont-[500] text-[14px] mb-1 block">Country</label>
+                <div>
+                    <label className="text-[#344054] font-[500] text-[14px] mb-1 block">Create transaction Pin</label>
+                    <input
+                        type="text"
+                        onChange={e => setTransactionPin(e.target.value)}
+                        placeholder="Input a 4-digit pin"
+                        className="border border-gray-300 p-2 rounded-[6px] outline-none w-full text-[#667085]"
+                    />
+                </div>
+
+                <div className="my-7">
+                    <label className="text-[#344054] font-[500] text-[14px] mb-1 block">Confirm transaction Pin</label>
+                    <input
+                        type="text"
+                        onChange={e => setConfirmTransactionPin(e.target.value)}
+                        placeholder="Input a 4-digit pin"
+                        className="border border-gray-300 p-2 rounded-[6px] outline-none w-full text-[#667085]"
+                    />
+                </div>
+                
+                <div className='relative'>
+                    <label className="text-[#344054] font-[500] text-[14px] mb-1 block">Country</label>
                     <div className='flex items-center justify-between border border-gray-300 p-2 rounded-[6px] w-full'>
                         <input
                             type="text"
                             value={country}
                             placeholder="Nigeria"
-                            className="outline-none w-full"
+                            className="outline-none w-full text-[#667085]"
                         />
                         <FaChevronDown className='cursor-pointer text-gray-300' onClick={() => setShowCountries(!showCountries)}/>
                     </div>
@@ -136,10 +166,14 @@ const AboutSelf = () => {
                         </div>
                     }
                 </div>
-
-                <button onClick={handleAboutSelfCreation} className="bg-primary-color text-white py-2 px-4 rounded-[8px] mt-5">
-                    Confirm
-                </button>
+                {
+                    loading ?
+                    <BtnLoader />
+                    :
+                    <button onClick={handleAboutSelfCreation} className="bg-primary-color text-white py-2 px-4 rounded-[8px] mt-7">
+                        Confirm
+                    </button>
+                }
                 <div className="text-center text-[#808080] mt-5 sm:mt-[70px] text-[14px]">
                     Already have an account? <Link to="/login" className="text-blue-600">Log in</Link>
                 </div>
