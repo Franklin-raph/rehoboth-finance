@@ -1,10 +1,11 @@
 import React from 'react'
 import { IoChevronDown, IoChevronDownOutline } from 'react-icons/io5'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Home = () => {
 
     const pricesArray = ["200", "300", "500", "1,000"]
+    const navigate = useNavigate()
 
   return (
     <div>
@@ -28,18 +29,14 @@ const Home = () => {
                     <Link>Faq</Link>
                 </li>
             </ul>
-            <button style={{ background:'linear-gradient(266deg, #0460BC 11.6%, #00B9FF 86.01%)' }} className='text-white px-[20px] py-[12px] rounded-[8px]'>Get Started</button>
+            <button onClick={() => navigate('/create-account')} style={{ background:'linear-gradient(266deg, #0460BC 11.6%, #00B9FF 86.01%)' }} className='text-white px-[20px] py-[12px] rounded-[8px]'>Get Started</button>
         </nav>
         <main className='px-[40px] flex items-start'>
-            <div className='mt-[2rem] bg-red-200 h-full'>
+            <div className='mt-[2rem]'>
                 <p className='home-text-gradient text-[72px] font-[600] w-[400px] leading-[68px]'>Earn, Save, Spend</p>
                 <p className='text-[#151517] text-[72px] font-[600]'>Like A Boss.</p>
                 <p className='text-[#575859] w-[80%] mt-[0.5rem]'>Rehoboth Finance offers the opportunity to experience Hassle-Free Cryptocurrency transactions for individuals and businesses.</p>
                 <button style={{ background:'linear-gradient(266deg, #0460BC 11.6%, #00B9FF 86.01%)' }} className='text-white px-[20px] py-[12px] rounded-[8px] mt-[1rem] border border-[#6E9BFF] shadow-lg'>Get Started</button>
-                <div>
-                    <p className='text-[#939393] uppercase tracking-[8.319px] self-end'>Supported by:</p>
-                    <img src="./images/stellar-foundation.svg" alt="" />
-                </div>
             </div>
             <div className='flex justify-center items-center rounded-[11px] lg:mt-9 flex-col'>
                   <div className="flex justify-center items-center w-full">
@@ -94,33 +91,39 @@ const Home = () => {
                           <button onClick={() => router.replace('/confirm-buy-with-fiat')} className="bg-primary-color text-white p-3 rounded-lg w-full mt-[1rem]">Next</button>
                       </div>
                   </div>
-                  <div className='bg-[#F8F8F8] py-4 px-[40px] rounded-[8px] shadow lg:w-[500px] w-full mt-[1rem] border border-[#B2B2B27A]'>
-                    <p className='text-[14px] text-[#121212] border-b border-[#CFCFCF] pb-2'>yUSDC = $3,000</p>
-                    <div className='flex flex-col gap-[8px] mt-5'>
-                      <div className='flex items-center justify-between text-[14px] text-[#121212]'>
-                        <p>Reference APR</p>
-                        <p>3.50%</p>
-                      </div>
-                      <div className='flex items-center justify-between text-[14px] text-[#121212]'>
-                        <p>Exchange Rate</p>
-                        <p>1 USDC = 0.98911 yUSDC</p>
-                      </div>
-                      <div className='flex items-center justify-between text-[14px] text-[#121212]'>
-                        <p>Transaction Cost</p>
-                        <p>~$11.24</p>
-                      </div>
-                      <div className='flex items-center justify-between text-[14px] text-[#121212]'>
-                        <p>Reward Fee</p>
-                        <p>10%</p>
-                      </div>
-                      <div className='flex items-center justify-between text-[14px] text-[#121212]'>
-                        <p>Referrer</p>
-                        <p>-</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            </div>
         </main>
+        <div className='flex flex-row-reverse px-[40px] items-end justify-between'>
+            <div className='bg-[#F8F8F8] py-4 px-[40px] rounded-[8px] shadow lg:w-[500px] w-full mt-[1rem] border border-[#B2B2B27A]'>
+                <p className='text-[14px] text-[#121212] border-b border-[#CFCFCF] pb-2'>yUSDC = $3,000</p>
+                <div className='flex flex-col gap-[8px] mt-5'>
+                <div className='flex items-center justify-between text-[14px] text-[#121212]'>
+                    <p>Reference APR</p>
+                    <p>3.50%</p>
+                </div>
+                <div className='flex items-center justify-between text-[14px] text-[#121212]'>
+                    <p>Exchange Rate</p>
+                    <p>1 USDC = 0.98911 yUSDC</p>
+                </div>
+                <div className='flex items-center justify-between text-[14px] text-[#121212]'>
+                    <p>Transaction Cost</p>
+                    <p>~$11.24</p>
+                </div>
+                <div className='flex items-center justify-between text-[14px] text-[#121212]'>
+                    <p>Reward Fee</p>
+                    <p>10%</p>
+                </div>
+                <div className='flex items-center justify-between text-[14px] text-[#121212]'>
+                    <p>Referrer</p>
+                    <p>-</p>
+                </div>
+                </div>
+            </div>
+            <div>
+                <p className='text-[#939393] uppercase tracking-[8.319px] self-end'>Supported by:</p>
+                <img src="./images/stellar-foundation.svg" alt="" />
+            </div>
+        </div>
     </div>
   )
 }
