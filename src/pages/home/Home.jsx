@@ -31,11 +31,15 @@ const Home = () => {
             <button style={{ background:'linear-gradient(266deg, #0460BC 11.6%, #00B9FF 86.01%)' }} className='text-white px-[20px] py-[12px] rounded-[8px]'>Get Started</button>
         </nav>
         <main className='px-[40px] flex items-start'>
-            <div className='mt-[2rem]'>
+            <div className='mt-[2rem] bg-red-200 h-full'>
                 <p className='home-text-gradient text-[72px] font-[600] w-[400px] leading-[68px]'>Earn, Save, Spend</p>
                 <p className='text-[#151517] text-[72px] font-[600]'>Like A Boss.</p>
                 <p className='text-[#575859] w-[80%] mt-[0.5rem]'>Rehoboth Finance offers the opportunity to experience Hassle-Free Cryptocurrency transactions for individuals and businesses.</p>
                 <button style={{ background:'linear-gradient(266deg, #0460BC 11.6%, #00B9FF 86.01%)' }} className='text-white px-[20px] py-[12px] rounded-[8px] mt-[1rem] border border-[#6E9BFF] shadow-lg'>Get Started</button>
+                <div>
+                    <p className='text-[#939393] uppercase tracking-[8.319px] self-end'>Supported by:</p>
+                    <img src="./images/stellar-foundation.svg" alt="" />
+                </div>
             </div>
             <div className='flex justify-center items-center rounded-[11px] lg:mt-9 flex-col'>
                   <div className="flex justify-center items-center w-full">
