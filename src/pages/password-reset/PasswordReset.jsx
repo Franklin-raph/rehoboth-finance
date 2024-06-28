@@ -157,7 +157,7 @@ const PasswordReset = () => {
                         </div>
                         </div>
                     </div>
-                        <p className='text-[#808080] cursor-pointer text-center mt-2 text-[14px]' onClick={resendOtp}>click to resend code?</p>
+                        <p className='text-[#808080] cursor-pointer text-center mt-2 text-[14px]' onClick={resendOtp}>Click to resend code?</p>
                         {
                             loading?
                             <BtnLoader />

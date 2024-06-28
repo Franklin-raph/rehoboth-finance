@@ -56,6 +56,7 @@ const CreateAccount = () => {
       }
       if(res.ok){
         localStorage.setItem('token', data.data.token)
+        localStorage.setItem('reg-email', email)
         navigate('/confirm-email')
       }
         console.log(data);

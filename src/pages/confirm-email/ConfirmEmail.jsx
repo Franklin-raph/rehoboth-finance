@@ -45,6 +45,29 @@ const ConfirmEmail = () => {
         }
     }
 
+    async function resendOtp(e){
+        e.preventDefault()
+        setLoading(true)
+        const res = await fetch(`${BASE_URL}/auth/resend-verify-email-otp`,{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Api-Key': `${API_KEY}`,
+            },
+            body: JSON.stringify({email: localStorage.getItem('reg-email')})
+        })
+        if(res) setLoading(false)
+        const data = await res.json()
+        if(res.ok){
+            setMsg(data.message)
+            setAlertType('success')
+        }else{
+            // const data = await res.json()
+            setMsg(data.message)
+            setAlertType('error')
+        }
+    }
+
   return (
     <div className="relative">
         <AuthNav />
@@ -57,7 +80,7 @@ const ConfirmEmail = () => {
                     </div>
                     <div className="text-center mb-12 mt-[-80px] relative z-[100]">
                         <h2 className="sm:text-2xl text-[18px] font-semibold">Confirm email address </h2>
-                        <p className="text-[#667085] text-[14px] mt-3">Please input the OTP sent to {localStorage.getItem('createAccountEmail')}</p>
+                        <p className="text-[#667085] text-[14px] mt-3">Please input the OTP sent to {localStorage.getItem('reg-email')}</p>
                     </div>
                     <div className="flex flex-col sm:w-[400px] mx-auto">
 
@@ -72,6 +95,7 @@ const ConfirmEmail = () => {
                         />
                         </div>
                         <p className='text-[#667085] text-[12px] mt-2 mb-[5rem] text-center'>Please check your email inbox for an OTP code</p>
+                        
                         {
                             loading?
                             <BtnLoader />
@@ -80,6 +104,7 @@ const ConfirmEmail = () => {
                                 Confirm
                             </button>
                         }
+                        <p className='text-[#667085] text-[12px] mt-4 mb-[0.5rem] text-center cursor-pointer' onClick={resendOtp}>Click to resend code?</p>
                         <div className="text-center text-[#808080] mt-5 sm:mt-[70px] text-[14px]">
                             Already have an account? <Link to="/login" className="text-blue-600">Log in</Link>
                         </div>

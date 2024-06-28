@@ -24,6 +24,9 @@ const AboutSelf = () => {
     const [msg, setMsg] = useState('')
     const [alertType, setAlertType] = useState('')
 
+    const API_KEY = import.meta.env.VITE_API_KEY
+    const BASE_URL = import.meta.env.VITE_BASE_URL
+
     async function getAllCountruies(){
         setLoader(true)
         const response = await fetch('https://api.countrystatecity.in/v1/countries',{
@@ -53,7 +56,7 @@ const AboutSelf = () => {
             return
         }else{
             setLoading(true)
-            const res = await fetch(`${BASE_URL}/user/about-self`,{
+            const res = await fetch(`${BASE_URL}/auth/create/wallet`,{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -61,7 +64,7 @@ const AboutSelf = () => {
                     'Api-Key': `${API_KEY}`,
                 },
                 body: JSON.stringify({
-                    transactionPin,
+                    pinCode:transactionPin,
                     userName,
                     country
                 })
