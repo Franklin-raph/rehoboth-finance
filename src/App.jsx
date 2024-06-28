@@ -25,6 +25,9 @@ import ConfirmEmail from './pages/confirm-email/ConfirmEmail'
 import Login from './pages/login/Login'
 import Send from './pages/send/Send';
 import Home from './pages/home/Home';
+import ForgotPassword from './pages/forgot-password/ForgotPassword'
+import ForgotPasswordOTP from './pages/password-reset/PasswordReset'
+import PasswordReset from './pages/password-reset/PasswordReset'
 
 function App() {
 
@@ -55,6 +58,8 @@ function App() {
         <Route path="/about-self" element={<AboutSelf />} />
         <Route path="/confirm-email" element={<ConfirmEmail />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/password-reset" element={<PasswordReset />} />
         <Route path="/send" element={<Send />} />
       </Routes>
     </HashRouter>

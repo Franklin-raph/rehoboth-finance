@@ -10,7 +10,7 @@ import { TbMessageQuestion } from "react-icons/tb";
 import { MdOutlineSavings } from "react-icons/md";
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { BsEmojiSmile } from "react-icons/bs";
-
+import Cookies from 'js-cookie';
 
 
 const SideNav = () => {
@@ -20,6 +20,7 @@ const SideNav = () => {
 
    function handleLogout(){
     localStorage.clear()
+    Cookies.remove('token')
     navigate('/login')
    }
   
