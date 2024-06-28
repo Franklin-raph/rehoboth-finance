@@ -6,6 +6,7 @@ import { BsLightningCharge } from "react-icons/bs";
 import AuthNav from '../../components/auth-nav/AuthNav';
 import Alert from '../../components/alert/Alert';
 import BtnLoader from '../../components/btn-loader/BtnLoader';
+import Cookies from 'js-cookie';
 
 const AboutSelf = () => {
 
@@ -70,9 +71,12 @@ const AboutSelf = () => {
                 })
             })
             const data = await res.json()
+            console.log(data);
             if(res) setLoading(false)
             if(res.ok){
-                setAlertType('success')
+                Cookies.set('token', data.data.token)
+                const { password, token, ...safeData } = data.data;
+                localStorage.setItem('userData', JSON.stringify(safeData));
                 navigate('/dashboard')
             }else{
                 setMsg(data.message)
