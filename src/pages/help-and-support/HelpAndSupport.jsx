@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import SideNav from '../../components/side-nav/SideNav'
 import TopNav from '../../components/top-nav/TopNav'
 import { BsEmojiSmile, BsCurrencyEuro } from 'react-icons/bs'
@@ -11,6 +11,7 @@ import { MdMoreTime } from "react-icons/md";
 import { BiDollar } from "react-icons/bi";
 import { SiSolana } from "react-icons/si";
 import { PiCurrencyNgn } from "react-icons/pi";
+import Cookies from 'js-cookie';
 
 
 
@@ -20,6 +21,11 @@ const HelpAndSupport = () => {
 
   const stagesArray = ["Stage 1", "Stage 2", "Stage 3"]
   const [stage, setStage] = useState(stagesArray[0])
+
+  useEffect(() => {
+    const token = Cookies.get('token')
+    if(token) navigate('/get-started')
+  }, [])
 
 
   return (

@@ -28,6 +28,11 @@ const AboutSelf = () => {
     const API_KEY = import.meta.env.VITE_API_KEY
     const BASE_URL = import.meta.env.VITE_BASE_URL
 
+    useEffect(() => {
+        const token = Cookies.get('token')
+        if(token) navigate('/get-started')
+    }, [])
+
     async function getAllCountruies(){
         setLoader(true)
         const response = await fetch('https://api.countrystatecity.in/v1/countries',{

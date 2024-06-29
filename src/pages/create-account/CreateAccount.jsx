@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { FaGoogle } from "react-icons/fa";
 import { FaDiscord } from "react-icons/fa";
@@ -8,6 +8,7 @@ import { GoEye, GoEyeClosed } from "react-icons/go";
 import AuthNav from '../../components/auth-nav/AuthNav';
 import Alert from '../../components/alert/Alert';
 import BtnLoader from '../../components/btn-loader/BtnLoader';
+import Cookies from 'js-cookie';
 
 const CreateAccount = () => {
 
@@ -21,6 +22,11 @@ const CreateAccount = () => {
     const [alertType, setAlertType] = useState('')
     const API_KEY = import.meta.env.VITE_API_KEY
     const BASE_URL = import.meta.env.VITE_BASE_URL
+
+    useEffect(() => {
+      const token = Cookies.get('token')
+      if(token) navigate('/get-started')
+  }, [])
 
     async function handleAccountCreation(e){
 

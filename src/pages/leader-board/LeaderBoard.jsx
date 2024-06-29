@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import SideNav from '../../components/side-nav/SideNav'
 import TopNav from '../../components/top-nav/TopNav'
+import Cookies from 'js-cookie'
 
 const LeaderBoard = () => {
+
+    useEffect(() => {
+        const token = Cookies.get('token')
+        if(token) navigate('/get-started')
+    }, [])
+
   return (
     <div>
         <div className='flex items-start bg-[#F5F5F5]'>

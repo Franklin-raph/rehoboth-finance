@@ -28,6 +28,7 @@ import Home from './pages/home/Home';
 import ForgotPassword from './pages/forgot-password/ForgotPassword'
 import ForgotPasswordOTP from './pages/password-reset/PasswordReset'
 import PasswordReset from './pages/password-reset/PasswordReset'
+import ProtectedRoutes from './utils/protected-routes/ProtectedRoutes'
 
 function App() {
 
@@ -36,31 +37,35 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/create-account" element={<CreateAccount />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/deposit" element={<Deposit />} />
-        <Route path="/withdraw" element={<Withdraw />} />
-        <Route path="/history" element={<History />} />
-        <Route path="/earn-points" element={<EarnPoints />} />
-        <Route path="/get-started" element={<GetStarted />} />
-        <Route path="/help-and-support" element={<HelpAndSupport />} />
-        <Route path="/savings" element={<Savings />} />
-        <Route path="/settings" element={<Settings />} />
-        <Route path="/wallet" element={<Wallet />} />
-        <Route path="/leader-board" element={<LeaderBoard />} />
-        <Route path="/deposit-currency/:country" element={<DepositCurrency />} />
-        <Route path="/deposit-provider/:country/:provider" element={<DepositProvider />} />
-        <Route path="/deposit-via-link" element={<DepositViaLink />} />
-        <Route path="/withdraw-currency/:country" element={<WithdrawCurrency />} />
-        <Route path="/withdraw-provider/:country/:provider" element={<WithdrawProvider />} />
-        <Route path="/withdraw-via-link" element={<WithdrawViaLink />} />
-        <Route path="/save-asset/:asset" element={<SaveAsset />} />
-        <Route path="/transaction-info" element={<TransactionInfo />} />
-        <Route path="/about-self" element={<AboutSelf />} />
         <Route path="/confirm-email" element={<ConfirmEmail />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/password-reset" element={<PasswordReset />} />
-        <Route path="/send" element={<Send />} />
+        <Route path="/help-and-support" element={<HelpAndSupport />} />
+        <Route path="/leader-board" element={<LeaderBoard />} />
+
+        <Route element={<ProtectedRoutes />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/deposit" element={<Deposit />} />
+          <Route path="/withdraw" element={<Withdraw />} />
+          <Route path="/history" element={<History />} />
+          <Route path="/earn-points" element={<EarnPoints />} />
+          <Route path="/get-started" element={<GetStarted />} />
+          <Route path="/savings" element={<Savings />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/wallet" element={<Wallet />} />
+          <Route path="/deposit-currency/:country" element={<DepositCurrency />} />
+          <Route path="/deposit-provider/:country/:provider" element={<DepositProvider />} />
+          <Route path="/deposit-via-link" element={<DepositViaLink />} />
+          <Route path="/withdraw-currency/:country" element={<WithdrawCurrency />} />
+          <Route path="/withdraw-provider/:country/:provider" element={<WithdrawProvider />} />
+          <Route path="/withdraw-via-link" element={<WithdrawViaLink />} />
+          <Route path="/save-asset/:asset" element={<SaveAsset />} />
+          <Route path="/transaction-info" element={<TransactionInfo />} />
+          <Route path="/about-self" element={<AboutSelf />} />
+          <Route path="/send" element={<Send />} />
+        </Route>
+
       </Routes>
     </HashRouter>
   )

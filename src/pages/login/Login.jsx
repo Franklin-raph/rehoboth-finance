@@ -23,6 +23,11 @@ const Login = () => {
 
     const navigate = useNavigate()
 
+    useEffect(() => {
+        const token = Cookies.get('token')
+        if(token) navigate('/get-started')
+    }, [])
+
     async function handleSignIn(e){
         e.preventDefault()
         if(!email || !password){

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { FaGoogle } from "react-icons/fa";
 import { FaDiscord } from "react-icons/fa";
@@ -8,6 +8,7 @@ import OTPInput from 'react-otp-input'
 import AuthNav from '../../components/auth-nav/AuthNav';
 import Alert from '../../components/alert/Alert';
 import BtnLoader from '../../components/btn-loader/BtnLoader';
+import Cookies from 'js-cookie';
 
 const ConfirmEmail = () => {
 
@@ -19,6 +20,11 @@ const ConfirmEmail = () => {
 
     const navigate = useNavigate()
     const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+        const token = Cookies.get('token')
+        if(token) navigate('/get-started')
+    }, [])
 
     async function handleConfirmEmail(){
         if(!otp){
