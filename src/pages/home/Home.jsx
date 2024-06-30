@@ -31,7 +31,7 @@ const Home = () => {
             </ul>
             <button onClick={() => navigate('/create-account')} style={{ background:'linear-gradient(266deg, #0460BC 11.6%, #00B9FF 86.01%)' }} className='text-white px-[20px] py-[12px] rounded-[8px]'>Get Started</button>
         </nav>
-        <main className='px-[40px] flex items-start'>
+        <main className='px-[40px] flex items-start lg:max-w-[1400px] md:w-[100%] mx-auto mt-[4rem]'>
             <div className='mt-[2rem]'>
                 <p className='home-text-gradient text-[72px] font-[600] w-[400px] leading-[68px]'>Earn, Save, Spend</p>
                 <p className='text-[#151517] text-[72px] font-[600]'>Like A Boss.</p>
@@ -93,37 +93,99 @@ const Home = () => {
                   </div>
             </div>
         </main>
-        <div className='flex flex-row-reverse px-[40px] items-end justify-between'>
-            <div className='bg-[#F8F8F8] py-4 px-[40px] rounded-[8px] shadow lg:w-[500px] w-full mt-[1rem] border border-[#B2B2B27A]'>
-                <p className='text-[14px] text-[#121212] border-b border-[#CFCFCF] pb-2'>yUSDC = $3,000</p>
-                <div className='flex flex-col gap-[8px] mt-5'>
-                <div className='flex items-center justify-between text-[14px] text-[#121212]'>
-                    <p>Reference APR</p>
-                    <p>3.50%</p>
-                </div>
-                <div className='flex items-center justify-between text-[14px] text-[#121212]'>
-                    <p>Exchange Rate</p>
-                    <p>1 USDC = 0.98911 yUSDC</p>
-                </div>
-                <div className='flex items-center justify-between text-[14px] text-[#121212]'>
-                    <p>Transaction Cost</p>
-                    <p>~$11.24</p>
-                </div>
-                <div className='flex items-center justify-between text-[14px] text-[#121212]'>
-                    <p>Reward Fee</p>
-                    <p>10%</p>
-                </div>
-                <div className='flex items-center justify-between text-[14px] text-[#121212]'>
-                    <p>Referrer</p>
-                    <p>-</p>
-                </div>
+        <div className='flex flex-row-reverse px-[40px] items-end justify-between lg:max-w-[1400px] md:w-[100%] mx-auto'>
+            <div className="flex justify-center items-center w-full">
+                <div className='bg-[#F8F8F8] py-4 px-[40px] rounded-[8px] shadow lg:w-[500px] w-full mt-[1rem] border border-[#B2B2B27A]'>
+                    <p className='text-[14px] text-[#121212] border-b border-[#CFCFCF] pb-2'>yUSDC = $3,000</p>
+                    <div className='flex flex-col gap-[8px] mt-5'>
+                    <div className='flex items-center justify-between text-[14px] text-[#121212]'>
+                        <p>Reference APR</p>
+                        <p>3.50%</p>
+                    </div>
+                    <div className='flex items-center justify-between text-[14px] text-[#121212]'>
+                        <p>Exchange Rate</p>
+                        <p>1 USDC = 0.98911 yUSDC</p>
+                    </div>
+                    <div className='flex items-center justify-between text-[14px] text-[#121212]'>
+                        <p>Transaction Cost</p>
+                        <p>~$11.24</p>
+                    </div>
+                    <div className='flex items-center justify-between text-[14px] text-[#121212]'>
+                        <p>Reward Fee</p>
+                        <p>10%</p>
+                    </div>
+                    <div className='flex items-center justify-between text-[14px] text-[#121212]'>
+                        <p>Referrer</p>
+                        <p>-</p>
+                    </div>
+                    </div>
                 </div>
             </div>
-            <div>
+            <div className='w-full'>
                 <p className='text-[#939393] uppercase tracking-[8.319px] self-end'>Supported by:</p>
-                <img src="./images/stellar-foundation.svg" alt="" />
+                <div className='flex items-center gap-10 mt-[2rem]'>
+                    <img src="./images/stellar-foundation.svg" alt="" />
+                    <img src="./images/havilah.svg" alt="" />
+                    <img src="./images/stellar.svg" alt="" />
+                </div>
             </div>
         </div>
+        <section className='mt-[10rem] lg:max-w-[1400px] md:w-[100%] mx-auto'>
+            <p className='text-[#939393] tracking-[8px] font-[500] text-center'>WHY SAVE WITH US</p>
+            <div className='flex items-center justify-center gap-[8rem] text-center mt-[3rem]'>
+                <div>
+                    <img src="./images/CurrencyCrush-Mobile-Money.svg" className='mx-auto' alt="" />
+                    <p className='text-[#151517] font-[500] text-[24px] my-3'>Desktop & Mobile</p>
+                    <p className='text-[#7E7B7B] text-[14px]'>Manage your funds anytime and anywhere with our great mobile and web apps. Track prices and stay up to date with markets.</p>
+                </div>
+                <div>
+                    <img src="./images/Currency-Crush-Shield.svg" className='mx-auto' alt="" />
+                    <p className='text-[#151517] font-[500] text-[24px] my-3'>Safe & Secure</p>
+                    <p className='text-[#7E7B7B] text-[14px]'>Rehoboth provides highly secure storage for your Lumens and other digital assets, offering 2FA and multisig protection.</p>
+                </div>
+                <div>
+                    <img src="./images/Spakles.svg" className='mx-auto' alt="" />
+                    <p className='text-[#151517] font-[500] text-[24px] my-3'>Simple & Clean</p>
+                    <p className='text-[#7E7B7B] text-[14px]'>Nice design, simple interface, clear instructions and helpful tips. Rehoboth is an easy way to get started with crypto.</p>
+                </div>
+            </div>
+        </section>
+
+        <section className='mt-[10rem] lg:max-w-[1400px] md:w-[100%] mx-auto'>
+            <div className='flex items-start justify-center'>
+                <div className="mx-auto bg-[#F1F1F1] lg:p-6 p-3 rounded-[8px] w-[400px]">
+                    <div className="flex items-center mb-4">
+                        <img
+                            src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png" // Replace with the appropriate URL of the USD Coin logo
+                            alt="USD Coin"
+                            className="h-6 w-6 mr-2"
+                        />
+                        <h2 className="text-[#121212]">Lumen</h2>
+                    </div>
+                    <div className='my-[2rem]'>
+                        <div className='inline-flex items-center gap-1 py-2 lg:px-4 px-2 bg-[#899EFD1A] rounded-[4px]'>
+                            <img src="./images/tag-user.svg" alt="" />
+                            <p className='text-primary-color text-[10px]'>9143 Participants</p>
+                        </div>
+                        <div className="my-2">
+                            <span className="text-5xl text-[#121212]">4%</span>
+                            <span className="text-lg">APY</span>
+                        </div>
+                        <div className="mb-6">
+                            <p className="text-[#5D5D5D] text-[12px] lg:text-[16px]">With yXLM asset</p>
+                        </div>
+                    </div>
+                    <div className="flex justify-center">
+                        <button className="bg-primary-color w-full text-white lg:px-6 px-3 py-2 rounded-lg font-semibold text-[12px] lg:text-[16px]">
+                            Earn with yXLM &rarr;
+                        </button>
+                    </div>
+                </div>
+                <div className='text-black'>
+                    <p>EARN UP TO 7% NTEREST. PAID DAILY.</p>
+                </div>
+            </div>
+        </section>
     </div>
   )
 }
