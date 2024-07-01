@@ -1,6 +1,15 @@
 import React from 'react'
 import { IoChevronDown, IoChevronDownOutline } from 'react-icons/io5'
 import { Link, useNavigate } from 'react-router-dom'
+import { BsDashLg } from "react-icons/bs";
+import { RxDividerVertical } from "react-icons/rx";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { FaTwitter } from "react-icons/fa6";
+import { RiInstagramFill } from "react-icons/ri";
+import { FaTelegramPlane } from "react-icons/fa";
+import { FiTarget } from "react-icons/fi";
+
+
 
 const Home = () => {
 
@@ -9,7 +18,7 @@ const Home = () => {
 
   return (
     <div>
-        <nav className='flex items-center justify-between py-[20px] px-[40px]'>
+        <nav className='flex items-center justify-between py-[20px] lg:max-w-[1300px] md:w-[100%] mx-auto'>
             <Link>
                 <img src="./images/rehoboth-logo.svg" alt="" />
             </Link>
@@ -151,9 +160,9 @@ const Home = () => {
             </div>
         </section>
 
-        <section className='mt-[10rem] lg:max-w-[1400px] md:w-[100%] mx-auto'>
+        <section className='mt-[10rem] lg:max-w-[1200px] md:w-[100%] mx-auto'>
             <div className='flex items-start justify-center'>
-                <div className="mx-auto bg-[#F1F1F1] lg:p-6 p-3 rounded-[8px] w-[400px]">
+                <div className="mx-auto bg-[#F1F1F1] lg:p-6 p-3 w-[400px]">
                     <div className="flex items-center mb-4">
                         <img
                             src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png" // Replace with the appropriate URL of the USD Coin logo
@@ -162,17 +171,17 @@ const Home = () => {
                         />
                         <h2 className="text-[#121212]">Lumen</h2>
                     </div>
-                    <div className='my-[2rem]'>
+                    <div className='my-[3rem]'>
                         <div className='inline-flex items-center gap-1 py-2 lg:px-4 px-2 bg-[#899EFD1A] rounded-[4px]'>
                             <img src="./images/tag-user.svg" alt="" />
                             <p className='text-primary-color text-[10px]'>9143 Participants</p>
                         </div>
-                        <div className="my-2">
-                            <span className="text-5xl text-[#121212]">4%</span>
-                            <span className="text-lg">APY</span>
+                        <div className="mb-2 mt-[2.5rem]">
+                            <span className="text-[70px] text-[#121212] leading-[26px]">4%</span>
+                            <span className="text-2xl">APY</span>
                         </div>
                         <div className="mb-6">
-                            <p className="text-[#5D5D5D] text-[12px] lg:text-[16px]">With yXLM asset</p>
+                            <p className="text-[#5D5D5D] text-[12px] lg:text-[16px] font-[300]">With yXLM asset</p>
                         </div>
                     </div>
                     <div className="flex justify-center">
@@ -181,11 +190,181 @@ const Home = () => {
                         </button>
                     </div>
                 </div>
-                <div className='text-black'>
-                    <p>EARN UP TO 7% NTEREST. PAID DAILY.</p>
+                <div className='text-black w-[500px] mt-7'>
+                    <p className='font-[500] leading-[42px] text-[40px] mb-4'>EARN UP TO 7% INTEREST. PAID DAILY.</p>
+                    <p className='leading-[20px]'>Create a savings account in USD and get 3-7% yearly interest, paid daily. You can track your earnings & add or withdraw money anytime.</p>
                 </div>
             </div>
         </section>
+
+        <section className='mt-20 lg:max-w-[1200px] md:w-[100%] mx-auto'>
+            <div className='flex items-start justify-center'>
+                <div className='text-black w-[300px] mx-auto mt-[12rem]'>
+                    <p className='font-[500] leading-[42px] text-[40px] mb-4'>NO MONTHLY CHARGES.</p>
+                    <p className='leading-[20px]'>Create a savings account in USD and get 3-7% yearly interest, paid daily. You can track your earnings & add or withdraw money anytime.</p>
+                </div>
+                <div className="mx-auto bg-[#F1F1F1] w-[500px] rounded-[8px]">
+                    <div className="flex items-center mb-4">
+                        <img
+                            src="./images/mission.svg" // Replace with the appropriate URL of the USD Coin logo
+                            alt="USD Coin"
+                            className="rounded-t-[8px]"
+                        />
+                    </div>
+                    <div className='mt-[2rem] mb-[3rem]'>
+                        <p className='text-[#4BAC0D] text-center text-[20px]'>Transaction Successful !</p>
+                        <p className='font-[300] text-center text-[#919090] mt-8'>The receiver received:</p>
+                        <p className='text-[#121212] text-center font-[500] mt-4'>2.00000 XLM (Fee: 0.1500 XLM)</p>
+
+                        <div className="mb-6 px-[4.5rem] mt-10 flex flex-col gap-4">
+                            <div className='flex items-center justify-between'>
+                                <p className='text-[#5D5D5D] font-[300]'>Coin</p>
+                                <div className='flex items-center gap-1'>
+                                    <img src="./images/Stellar.svg" alt="" />
+                                    <p className='text-[#121212]'>Stellar Lumen</p>
+                                </div>
+                            </div>
+                            <div className='flex items-center justify-between'>
+                                <p className='text-[#5D5D5D] font-[300]'>Address</p>
+                                <p className='text-primary-color'>0xe4iJ78ufP9kwH56...k8Ty</p>
+                            </div>
+                            <div className='flex items-center justify-between'>
+                                <p className='text-[#5D5D5D] font-[300]'>Network</p>
+                                <p className='text-[#121212]'>Stellar Classic Network</p>
+                            </div>
+                            <div className='flex items-center justify-between'>
+                                <p className='text-[#5D5D5D] font-[300]'>Source</p>
+                                <p className='text-[#121212]'>Spot wallet</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex justify-center px-[4rem] pb-10">
+                        <button className="bg-primary-color w-full text-white lg:px-6 px-3 py-2 rounded-lg font-semibold text-[12px] lg:text-[16px]">
+                            Go to wallet
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section className='mt-20 lg:max-w-[1200px] md:w-[100%] mx-auto'>
+            <div className='flex items-start justify-center'>
+            <div className="mx-auto bg-[#F1F1F1] w-[500px] rounded-[8px]">
+                    <div className="flex items-center mb-4">
+                        <img
+                            src="./images/mission.svg" // Replace with the appropriate URL of the USD Coin logo
+                            alt="USD Coin"
+                            className="rounded-t-[8px]"
+                        />
+                    </div>
+                    <div className='mt-[2rem] mb-[3rem]'>
+                        <p className='text-[#5D5D5D] font-[300] text-center text-[20px]'>Saving successful</p>
+                        <p className='text-[#121212] text-center font-[500] text-[30px] mt-4'>0.05456788 XLM</p>
+
+                        <div className="mb-6 px-[4.5rem] mt-10 flex flex-col gap-4">
+                            <div className='flex items-center gap-1 text-[#121212]'>
+                                <FiTarget />
+                                <p>Summary</p>
+                            </div>
+                            <div className='flex items-center justify-start gap-2'>
+                                <p className='text-[#5D5D5D] font-[300]'>Save date:</p>
+                                <p className='text-[#121212]'>May 6, 2024</p>
+                            </div>
+                            <div className='flex items-center justify-start gap-2'>
+                                <p className='text-[#5D5D5D] font-[300]'>Value date:</p>
+                                <p className='text-[#121212]'>May 6, 2024</p>
+                            </div>
+                            <div className='flex items-center justify-start gap-2'>
+                                <p className='text-[#5D5D5D] font-[300]'>Interest end date:</p>
+                                <p className='text-[#121212]'>May 6, 2024</p>
+                            </div>
+                            <div className='flex items-center justify-start gap-2'>
+                                <p className='text-[#5D5D5D] font-[300]'>Redemption period:</p>
+                                <p className='text-[#121212]'>May 6, 2024</p>
+                            </div>
+                            <div className='flex items-center justify-start gap-2'>
+                                <p className='text-[#5D5D5D] font-[300]'>Redemption date:</p>
+                                <p className='text-[#121212]'>May 6, 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex justify-center px-[4rem] pb-10 flex-col gap-2">
+                        <button className="bg-primary-color w-full text-white lg:px-6 px-3 py-2 rounded-lg text-[12px] lg:text-[16px]">
+                            Go to wallet
+                        </button>
+                        <button className="border border-primary-color w-full text-primary-color lg:px-6 px-3 py-2 rounded-lg text-[12px] lg:text-[16px]">
+                            Monitor Stake
+                        </button>
+                    </div>
+                </div>
+                <div className='text-black w-[400px] mx-auto mt-[12rem]'>
+                    <p className='font-[500] leading-[42px] text-[40px] mb-4'>INVEST IN THE FUTURE.</p>
+                    <p className='leading-[20px]'>Create a savings account in USD and get 3-7% yearly interest, paid daily. You can track your earnings & add or withdraw money anytime.</p>
+                </div>
+            </div>
+        </section>
+
+        <section className='mt-[10rem] lg:max-w-[1200px] md:w-[100%] mx-auto'>
+            <p className='font-[500] leading-[42px] text-[38px]'>From cash to crypto — and back again.</p>
+            <div className='grid grid-cols-3 gap-2 mt-10'>
+                <div className='w-[390px] bg-[#F1F1F1] rounded-[8px] p-10'>
+                    <p className='font-[500] text-[30px] mb-2 leading-[42px]'>Deposit.</p>
+                    <p className='text-[#5F5E5E] text-[14px] font-[300] leading-[20px]'>Use a card, Apple Pay, Google Pay or PayPal to buy crypto fast. We also accept bank transfers and wires in applicable jurisdictions.</p>
+                    <img src="./images/CurrencyCrush-Mobile-Money.svg" className='mx-auto mt-10 w-[80%]' alt="" />
+                </div>
+                <div className='w-[390px] bg-[#F1F1F1] rounded-[8px] p-10'>
+                    <p className='font-[500] text-[30px] mb-2 leading-[42px]'>Save.</p>
+                    <p className='text-[#5F5E5E] text-[14px] font-[300] leading-[20px]'>Swap between tokens, even if they’re on different chains (we make bridging seamless too).</p>
+                    <img src="./images/CurrencyCrush-Mobile-Money.svg" className='mx-auto mt-10 w-[80%]' alt="" />
+                </div>
+                <div className='w-[390px] bg-[#F1F1F1] rounded-[8px] p-10'>
+                    <p className='font-[500] text-[30px] mb-2 leading-[42px]'>Withdraw.</p>
+                    <p className='text-[#5F5E5E] text-[14px] font-[300] leading-[20px]'>UTurn your crypto into cash. In a flash. Get paid straight to your bank account, card or PayPal account.</p>
+                    <img src="./images/CurrencyCrush-Mobile-Money.svg" className='mx-auto mt-10 w-[80%]' alt="" />
+                </div>
+            </div>
+        </section>
+
+        <section className='mt-[10rem] lg:max-w-[1200px] md:w-[100%] mx-auto flex items-start'>
+            <div className='w-[600px]'>
+                <p className='text-[#1D1D1D] text-[32px] mb-3'>Start Your Journey to Financial Freedom With Rehoboth Finance</p>
+                <p className='text-[#2D2A2A] font-[400]'>Get our mobile app on any device you use on the app store or Google play store.</p>
+            </div>
+            <img src="./images/CurrencyCrush-Mobile-Money.svg" className='mx-auto w-[300px]' alt="" />
+        </section>
+
+        <footer className='mt-[10rem] lg:max-w-[1200px] md:w-[100%] mx-auto flex items-start justify-between mb-10 text-[#71717A]'>
+            <p>
+                &copy; {new Date().getFullYear()} Rehoboth finance. All rights reserved.
+            </p>
+            <div className='flex items-center gap-[2rem]'>
+                <div className='flex items-center gap-1'>
+                    <p>Login</p>
+                    <BsDashLg />
+                    <p>Signup</p>
+                </div>
+                <RxDividerVertical />
+                <div className='flex items-center gap-1'>
+                    <p>Privacy</p>
+                    <BsDashLg />
+                    <p>Terms</p>
+                </div>
+            </div>
+            <div className='flex items-center gap-5 text-white'>
+                <div className='bg-[#71717A] p-2 text-[20px] rounded-full'>
+                    <FaLinkedinIn />
+                </div>
+                <div className='bg-[#71717A] p-2 text-[20px] rounded-full'>
+                    <FaTwitter />
+                </div>
+                <div className='bg-[#71717A] p-2 text-[20px] rounded-full'>
+                    <RiInstagramFill />
+                </div>
+                <div className='bg-[#71717A] p-2 text-[20px] rounded-full'>
+                    <FaTelegramPlane />
+                </div>
+            </div>
+        </footer>
     </div>
   )
 }
